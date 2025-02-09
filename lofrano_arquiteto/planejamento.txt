@@ -1,0 +1,26 @@
+HISTÓRIAS DE USO / REQUISITOS:
+
+- Briefing do trabalho
+- Espaço para contato
+- Exibição de imagens de projetos
+
+FEATURINGS:
+
+- Logo escura fica clara e menor no header quando a página desce (transição)
+- Carrossel apenas com imagens
+- Seção para email
+- Accordion na consultoria online
+
+CORES:
+
+- As mesmas do canva
+
+TELAS:
+
+1. Hero
+2. About
+3. Services
+4. Consulting
+5. Projects
+6. 4Architects
+7. Contact
