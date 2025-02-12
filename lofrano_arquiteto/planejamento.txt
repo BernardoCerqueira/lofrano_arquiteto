@@ -7,9 +7,9 @@ HISTÓRIAS DE USO / REQUISITOS:
 FEATURINGS:
 
 - Logo escura fica clara e menor no header quando a página desce (transição)
-- Carrossel apenas com imagens
-- Seção para email
 - Accordion na consultoria online
+- Slides apenas com imagens (Splide.js)
+- Seção para email
 
 CORES:
 
