@@ -11,7 +11,21 @@ const lato = Lato({
 
 export const metadata: Metadata = {
   title: "Lofrano Arquitetura",
-  description: "Página de apresentação de Lofrano Arquitetura",
+  description: "Escritório de Arquitetura - Transforme seus sonhos em realidade com projetos sob medida feitos por especialistas.",
+  openGraph: {
+    type: "website",
+    description: "Escritório de Arquitetura - Transforme seus sonhos em realidade com projetos sob medida feitos por especialistas.",
+    title: "Lofrano Arquitetura",
+    images: [
+      {
+        url: "https://lofranoarquitetura.com.br/logo.png",
+        width: 600,
+        height: 600,
+        alt: "Lofrano Arquitetura"
+      }
+    ]
+  },
+  keywords: "arquitetura, lofrano, arquiteto, petrópolis, rio de janeiro, design, interiores, construção"
 };
 
 export default function RootLayout({
