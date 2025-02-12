@@ -24,7 +24,7 @@ export default function Hero(){
                 </Link>
                 <Link href={"#contact"} className={styles.link}>
                     <li className={styles.listItem}>CONTATOS</li>
-                </Link>                                                           
+                </Link>                              
             </ul>
             <Image
                 src={"/logo.png"}
