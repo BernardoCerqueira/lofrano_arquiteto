@@ -1,0 +1,7 @@
+@use "../../../styles/colors.scss";
+
+.header{
+    background-color: colors.$gray;
+    padding: 1rem;
+    text-align: center;
+}
