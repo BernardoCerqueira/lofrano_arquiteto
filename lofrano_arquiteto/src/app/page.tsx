@@ -9,7 +9,7 @@ export default function Home() {
       <section id="hero">
         <Hero />
       </section>
-      <section id="about" style={{height: "110vh"}}></section>
+      <section id="about"></section>
       <section id="services"></section>
       <section id="consulting"></section>
       <section id="projects"></section>

@@ -1,5 +1,5 @@
 import Image from "next/image"
-import styles from "./Header.module.scss"
+import styles from "./Hero.module.scss"
 import Link from "next/link"
 
 export default function Hero(){
