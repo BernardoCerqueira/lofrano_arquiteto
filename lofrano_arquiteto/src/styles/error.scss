@@ -1,0 +1,30 @@
+@use "../styles/colors.scss";
+
+.errorDiv{
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    padding-top: 10vw;
+    height: 100vh;
+    background-color: colors.$lightGray;
+    gap: 2rem;
+}
+
+h1{
+    color: colors.$darkGray
+}
+
+p{
+    font-size: 20px;
+    width: 80%;
+    text-align: justify;
+}
+
+.button{
+    padding: 1rem 2rem;
+
+    &:hover{
+        background-color: colors.$lightGray;
+        color: colors.$darkGray
+    }
+}
