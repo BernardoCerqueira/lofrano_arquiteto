@@ -7,11 +7,11 @@ export default function Services(){
             <div className={styles.cards}>
                 <div className={styles.card}>
                     <h3 className={styles.cardTitle}>Projetos residenciais e comerciais</h3>
-                    <p className={styles.cardText}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod harum tempora sapiente incidunt est animi molestias minus at? Provident, nobis.</p>
+                    <p className={styles.cardText}>Projetos detalhados de residências e estabelecimentos comerciais, com imersão realista em 3D e alta qualidade na entrega.</p>
                 </div>
                 <div className={styles.card}>
                     <h3 className={styles.cardTitle}>Reformas</h3>
-                    <p className={styles.cardText}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod harum tempora sapiente incidunt est animi molestias minus at? Provident, nobis.</p>
+                    <p className={styles.cardText}>Reforme sua casa com modernidade e conforto para transformar seu dia a dia.</p>
                 </div>
                 <div className={styles.card}>
                     <h3 className={styles.cardTitle}>Consultoria Online</h3>
@@ -19,7 +19,7 @@ export default function Services(){
                 </div>
                 <div className={styles.card}>
                     <h3 className={styles.cardTitle}>Legalização</h3>
-                    <p className={styles.cardText}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod harum tempora sapiente incidunt est animi molestias minus at? Provident, nobis.</p>
+                    <p className={styles.cardText}>Regularize seu imóvel com total conformidade às exigências da prefeitura local.</p>
                 </div>
             </div>
         </div>
