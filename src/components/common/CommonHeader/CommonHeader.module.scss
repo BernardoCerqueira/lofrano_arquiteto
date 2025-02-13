@@ -28,3 +28,10 @@
         pointer-events: none;
     }
 }
+
+@media screen and (max-width: 435px) {
+    .logo{
+        width: 100px;
+        height: 100px;
+    }
+}

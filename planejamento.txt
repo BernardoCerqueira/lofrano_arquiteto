@@ -28,3 +28,10 @@ TELAS:
 ---------------
 
 Fazer responsividade para telas muito grandes
+
+Adicionar essa media-query para todas as seções
+@media screen and (max-width: 435px) {
+    .container{
+        padding-top: 10rem;
+    }
+}

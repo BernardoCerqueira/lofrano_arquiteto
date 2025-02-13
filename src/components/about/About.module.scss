@@ -82,6 +82,10 @@
 }
 
 @media screen and (max-width: 435px) {
+    .container{
+        padding-top: 10rem;
+    }
+
     .description {
         .descriptionText {
             font-size: 15px;

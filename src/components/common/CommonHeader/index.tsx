@@ -27,6 +27,7 @@ export default function CommonHeader() {
         alt="Logo"
         width={120}
         height={120}
+        className={styles.logo}
       />
       <Link href={"#hero"}>
         <FaArrowAltCircleUp className={styles.arrow} size={60} />
