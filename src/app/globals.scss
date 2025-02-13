@@ -7,3 +7,13 @@
     font-family: var(--font-lato);
     color: #1c1e20;
 }
+
+::-webkit-scrollbar{
+    background-color:colors.$lightGray;
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: colors.$gray;
+    border-radius: 10px;
+}

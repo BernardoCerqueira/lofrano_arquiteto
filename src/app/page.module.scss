@@ -4,13 +4,3 @@
     min-height: 100vh;
     background-color: colors.$lightGray;
 }
-
-::-webkit-scrollbar{
-    background-color:colors.$lightGray;
-    width: 7px;
-}
-
-::-webkit-scrollbar-thumb{
-    background-color: colors.$gray;
-    border-radius: 10px;
-}
