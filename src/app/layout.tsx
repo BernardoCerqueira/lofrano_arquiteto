@@ -25,7 +25,7 @@ export const metadata: Metadata = {
       }
     ]
   },
-  keywords: "arquitetura, lofrano, arquiteto, petrópolis, rio de janeiro, design, interiores, construção"
+  keywords: "arquitetura, lofrano, arquiteto, petrópolis, rio de janeiro, design, interiores, construção, projetos, projeto, arquitetônico, joão, pedro"
 };
 
 export default function RootLayout({
