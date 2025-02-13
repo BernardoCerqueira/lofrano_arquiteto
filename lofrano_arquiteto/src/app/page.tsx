@@ -1,6 +1,7 @@
 import Hero from "@/components/hero";
 import styles from "./page.module.scss";
 import CommonHeader from "@/components/common/CommonHeader";
+import About from "@/components/about";
 
 export default function Home() {
   return (
@@ -9,7 +10,9 @@ export default function Home() {
       <section id="hero">
         <Hero />
       </section>
-      <section id="about"></section>
+      <section id="about">
+        <About/>
+      </section>
       <section id="services"></section>
       <section id="consulting"></section>
       <section id="projects"></section>

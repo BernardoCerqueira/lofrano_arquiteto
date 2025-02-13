@@ -1,4 +1,5 @@
 @use "../../styles/colors.scss";
+@use "../../styles/fonts.scss";
 
 .hero{
     display: flex;
@@ -9,11 +10,12 @@
     min-height: 100vh;
     gap: 3rem;
     text-transform: uppercase;
+    margin-bottom: 12rem;
 }
 
 .title{
     color: colors.$gray;
-    font-size: 28px;
+    font-size: fonts.$title;
 }
 
 .list{

@@ -1,0 +1,87 @@
+@use "../../styles/colors.scss";
+@use "../../styles/fonts.scss";
+
+.container{
+    min-height: calc(100vh - 152px);
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    gap: 2rem;
+    padding: 3rem 0;
+}
+
+.profilePic{
+    border: 1px solid black;
+}
+
+.contentDiv{   
+    display: flex;
+    gap: 6rem;
+    align-items: flex-end;
+    padding: 0 15%;
+}
+
+.title{
+    font-size: fonts.$title;
+    color: colors.$gray;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.description{
+    .descriptionText{
+        text-align: justify;
+        font-size: 18px;
+        letter-spacing: 2px;
+        margin: 0;
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .contentDiv{
+        padding: 0 3rem;
+        gap: 4rem;
+    }
+
+    .description{
+        .descriptionText{
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+    }
+}
+
+@media screen and (max-width: 865px) {
+    .container{
+        padding-top: 11rem;
+    }
+
+    .contentDiv{
+        flex-direction: column;
+        padding: 0 2rem;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .profilePic{
+        max-width: 100%;
+        height: auto;
+    }
+
+    .description{
+        .descriptionText{
+            font-size: 16px;
+            letter-spacing: 0px;
+        }
+    }
+}
+
+@media screen and (max-width: 435px) {
+    .description{
+        .descriptionText{
+            font-size: 15px;
+        }
+    }
+}
