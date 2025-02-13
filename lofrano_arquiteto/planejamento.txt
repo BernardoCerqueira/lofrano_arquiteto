@@ -6,7 +6,7 @@ HISTÓRIAS DE USO / REQUISITOS:
 
 FEATURINGS:
 
-- Logo escura fica clara e menor no header quando a página desce (transição)
+- Logo escura fica clara e menor no header quando a página desce (transição) [OK]
 - Accordion na consultoria online
 - Slides apenas com imagens (Splide.js)
 - Seção para email
@@ -17,8 +17,8 @@ CORES:
 
 TELAS:
 
-1. Hero
-2. About
+1. Hero [OK]
+2. About [OK]
 3. Services
 4. Consulting
 5. Projects
