@@ -1,14 +1,14 @@
 @use "../../styles/colors.scss";
-@use "../../styles/fonts.scss";
+@use "../../styles/measures.scss";
 
 .container{
-    min-height: calc(100vh - 152px);
+    min-height: 100vh;
     height: fit-content;
     display: flex;
     flex-direction: column;
     text-transform: uppercase;
     gap: 2.5rem;
-    padding: 3rem 0;
+    padding-top: measures.$section-pt;
 }
 
 .profilePic{
@@ -23,7 +23,7 @@
 }
 
 .title{
-    font-size: fonts.$title;
+    font-size: measures.$title;
     color: colors.$gray;
     text-align: center;
     letter-spacing: 2px;
@@ -54,10 +54,6 @@
 }
 
 @media screen and (max-width: 865px) {
-    .container{
-        padding-top: 11rem;
-    }
-
     .contentDiv{
         flex-direction: column;
         padding: 0 2rem;

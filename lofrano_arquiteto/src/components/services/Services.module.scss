@@ -1,0 +1,36 @@
+@use "../../styles/colors.scss";
+@use "../../styles/measures.scss";
+
+.container{
+    min-height: 100vh;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    text-align: center;
+    gap: 3rem;
+    padding-top: measures.$section-pt;
+}
+
+.title{
+    font-size: measures.$title;
+    color: colors.$gray;
+    letter-spacing: 2px;
+}
+
+.cards{
+    display: flex;
+    padding: 0 10%;
+}
+
+.card{
+    width: 20%;
+}
+
+.cardTitle{
+    color: colors.$gray;
+}
+
+.cardText{
+    font-size: 16px;
+}

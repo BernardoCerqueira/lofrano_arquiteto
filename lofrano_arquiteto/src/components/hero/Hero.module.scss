@@ -1,5 +1,5 @@
 @use "../../styles/colors.scss";
-@use "../../styles/fonts.scss";
+@use "../../styles/measures.scss";
 
 .hero{
     display: flex;
@@ -10,12 +10,12 @@
     min-height: 100vh;
     gap: 3rem;
     text-transform: uppercase;
-    margin-bottom: 12rem;
+    margin-bottom: 1rem;
 }
 
 .title{
     color: colors.$gray;
-    font-size: fonts.$title;
+    font-size: measures.$title;
 }
 
 .list{
@@ -29,7 +29,7 @@
 }
 
 .listItem{
-    font-size: fonts.$title;
+    font-size: measures.$title;
     letter-spacing: 2px;
 }
 
