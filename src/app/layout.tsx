@@ -35,10 +35,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
+      <head>
+        <meta name="google-site-verification" content="EmWENPS_TCMFOuNgTWJhGCBZ8QxImpFYL3rsdl8RCCE" />
+      </head>
       <body className={`${lato.variable}`}>
         {children}
 
-        
+
       </body>
     </html>
   );
