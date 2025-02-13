@@ -11,7 +11,7 @@ export default function Services(){
                 </div>
                 <div className={styles.card}>
                     <h3 className={styles.cardTitle}>Reformas</h3>
-                    <p className={styles.cardText}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati amet accusantium, esse quis ex delectus!</p>
+                    <p className={styles.cardText}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod harum tempora sapiente incidunt est animi molestias minus at? Provident, nobis.</p>
                 </div>
                 <div className={styles.card}>
                     <h3 className={styles.cardTitle}>Consultoria Online</h3>
@@ -19,7 +19,7 @@ export default function Services(){
                 </div>
                 <div className={styles.card}>
                     <h3 className={styles.cardTitle}>Legalização</h3>
-                    <p className={styles.cardText}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid assumenda ipsam nihil quisquam vel nisi, repudiandae eius amet excepturi. Exercitationem sed voluptate consectetur pariatur? Libero?</p>
+                    <p className={styles.cardText}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod harum tempora sapiente incidunt est animi molestias minus at? Provident, nobis.</p>
                 </div>
             </div>
         </div>
