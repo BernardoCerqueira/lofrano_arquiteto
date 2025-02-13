@@ -3,9 +3,11 @@
 import useIsSectionOutOfView from "@/hooks/useIsSectionOutOfView"
 import styles from "./CommonHeader.module.scss"
 import Image from "next/image";
+import { FaArrowAltCircleUp } from "react-icons/fa";
+import Link from "next/link";
 
 export default function CommonHeader() {
-  const isHeroOutOfView = useIsSectionOutOfView("hero") 
+  const isHeroOutOfView = useIsSectionOutOfView("hero")
 
   return (
     <header
@@ -26,6 +28,9 @@ export default function CommonHeader() {
         width={120}
         height={120}
       />
+      <Link href={"#hero"}>
+        <FaArrowAltCircleUp className={styles.arrow} size={60} />
+      </Link>
     </header>
   )
 }

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "./globals.scss";
 import "bootstrap/dist/css/bootstrap.min.css"
 import { Lato } from "next/font/google"
 
@@ -37,6 +37,8 @@ export default function RootLayout({
     <html lang="pt-br">
       <body className={`${lato.variable}`}>
         {children}
+
+        
       </body>
     </html>
   );

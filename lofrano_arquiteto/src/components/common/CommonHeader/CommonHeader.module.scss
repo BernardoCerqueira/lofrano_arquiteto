@@ -5,3 +5,20 @@
     padding: 1rem;
     text-align: center;
 }
+
+.arrow{
+    position: fixed;
+    z-index: 10;
+    bottom: 30px;
+    right: 30px;
+    background-color: colors.$lightGray;
+    opacity: .8;
+    margin-left: 100px;
+}
+
+@media screen and (max-width: 1200px) {
+    .arrow{
+        display: none;
+        pointer-events: none;
+    }
+}
