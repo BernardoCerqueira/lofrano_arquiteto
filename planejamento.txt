@@ -19,8 +19,12 @@ TELAS:
 
 1. Hero [OK]
 2. About [OK]
-3. Services
+3. Services [OK]
 4. Consulting
 5. Projects
 6. 4Architects
 7. Contact
+
+---------------
+
+Fazer responsividade para telas muito grandes

@@ -1,7 +1,7 @@
 @use "../../styles/colors.scss";
 @use "../../styles/measures.scss";
 
-.container{
+.container {
     min-height: 100vh;
     height: fit-content;
     display: flex;
@@ -11,42 +11,45 @@
     padding-top: measures.$section-pt;
 }
 
-.profilePic{
+.profilePic {
     border: 1px solid black;
 }
 
-.contentDiv{   
+.contentDiv {
     display: flex;
     gap: 6rem;
     align-items: flex-end;
     padding: 0 15%;
 }
 
-.title{
+.title {
     font-size: measures.$title;
     color: colors.$gray;
     text-align: center;
     letter-spacing: 2px;
 }
 
-.description{
-    .descriptionText{
+.description {
+    .descriptionText {
         text-align: justify;
         font-size: 18px;
         letter-spacing: 2px;
         margin: 0;
         margin-top: 30px;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
     }
 }
 
 @media screen and (max-width: 1199px) {
-    .contentDiv{
+    .contentDiv {
         padding: 0 3rem;
         gap: 4rem;
     }
 
-    .description{
-        .descriptionText{
+    .description {
+        .descriptionText {
             font-size: 16px;
             letter-spacing: 1px;
         }
@@ -54,24 +57,24 @@
 }
 
 @media screen and (max-width: 865px) {
-    .container{
+    .container {
         gap: 2.5rem;
     }
-    
-    .contentDiv{
+
+    .contentDiv {
         flex-direction: column;
         padding: 0 2rem;
         gap: 2rem;
         align-items: center;
     }
 
-    .profilePic{
+    .profilePic {
         max-width: 100%;
         height: auto;
     }
 
-    .description{
-        .descriptionText{
+    .description {
+        .descriptionText {
             font-size: 16px;
             letter-spacing: 0px;
         }
@@ -79,8 +82,8 @@
 }
 
 @media screen and (max-width: 435px) {
-    .description{
-        .descriptionText{
+    .description {
+        .descriptionText {
             font-size: 15px;
         }
     }

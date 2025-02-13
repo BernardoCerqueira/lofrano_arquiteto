@@ -1,7 +1,7 @@
 @use "../../styles/colors.scss";
 @use "../../styles/measures.scss";
 
-.container{
+.container {
     min-height: 100vh;
     height: fit-content;
     display: flex;
@@ -13,14 +13,14 @@
     padding-bottom: 2rem;
 }
 
-.title{
+.title {
     font-size: measures.$title;
     color: colors.$gray;
     letter-spacing: 2px;
     pointer-events: none;
 }
 
-.cards{
+.cards {
     width: 100%;
     margin: 0 auto;
     padding: 0 10vw;
@@ -31,77 +31,115 @@
     gap: 2rem;
 }
 
-.card{
+.card {
     min-width: 280px;
     width: 90%;
     height: 50vh;
-    min-height: 510px;
+    min-height: 490px;
     background-color: white;
     border: 1px solid colors.$gray;
     border-radius: 25px;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 5rem;
+    padding: 1rem 2rem;
     opacity: .5;
     transition: all .7s ease;
 
-    &:hover{
+    &:hover {
         opacity: 1;
 
-        .cardText{
+        .cardText {
             transition: all .7s ease;
             opacity: 1;
         }
     }
 }
 
-.cardTitle{
+.cardTitle {
     color: colors.$darkGray;
     font-weight: bold;
     pointer-events: none;
+    margin-bottom: 5rem;
+    height: 90px;
 }
 
-.cardText{
+.cardText {
     font-size: 16px;
     color: black;
     opacity: 0;
     transition: all .6 ease;
     pointer-events: none;
+    text-align: justify;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+.learnMore {
+    opacity: 0;
 }
 
 @media screen and (max-width: 1280px) {
-    .cards{
+    .cards {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .card{
-        min-height: 300px;
+    .card {
+        height: 350px;
+        min-height: fit-content;
+    }
+
+    .cardTitle {
+        height: 50px;
     }
 }
 
 @media screen and (max-width: 650px) {
-    .cards{
+    .container{
+        gap: 2rem;
+    }
+
+    .cards {
         grid-template-columns: repeat(1, 1fr);
         padding: 20px;
     }
 
-    .card{
+    .cardTitle {
+        font-size: 20px;
+        height: 10px;
+        padding: 0;
+    }
+
+    .cardText {
+        font-size: 14px;
+        margin: 0;
+        display: none;
+    }
+
+    .learnMore {
+        opacity: 1;
+        margin-top: 6.5rem;
+        margin-bottom: 0;
+    }
+
+    .card {
         min-width: 200px;
         max-width: 400px;
         width: 100%;
-        height: fit-content;
-        min-height: 300px;
-        gap: 3rem;
-        opacity: .7;
-    }
+        height: 280px;
+        min-height: fit-content;
+        gap: 1rem;
+        opacity: .4;
+        display: flex;
+        flex-direction: column;
 
-    .cardTitle{
-        font-size: 20px;
-    }
+        &:hover {
+            .learnMore {
+                display: none;
+                
+            }
 
-    .cardText{
-        font-size: 15px;
-        opacity: 1;
+            .cardText {
+                display: block;
+            }
+        }
     }
 }
