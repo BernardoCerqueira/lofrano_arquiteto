@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.lofranoarquitetura.com.br
+
+# Sitemaps
+Sitemap: https://www.lofranoarquitetura.com.br/sitemap.xml
