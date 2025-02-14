@@ -7,34 +7,38 @@
     padding-top: measures.$section-pt;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 0rem;
+    padding-bottom: 2rem; //temporário
 }
 
 .contentDiv{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    padding: 0 1rem;
 }
 
 .howItWorks{
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
 }
 
 .firstAccordion{
-    width: 400px;
+    width: 26vw;
     margin: auto;
-    border-radius: 10px;
-    border: 1px solid black;
+    border-radius: 50px;
+    border: 2px solid #737373a4;
     padding: 1rem;
     background-color: white;
 }
 
+.secondAccordion{
+    width: 30vw;
+    margin: auto;
+    padding: 0 1rem;
+}
+
 .houseImage{
     margin: auto;
-    margin-top: 5rem;
-    margin-left: 10.4rem;
+    margin-top: 6rem;
 }
 
 .youReceive{
@@ -53,6 +57,8 @@
     text-transform: uppercase;
     color: colors.$darkGray;
     font-weight: bold;
+    margin-bottom: 3rem;
+    letter-spacing: 2px;
 }
 
 @media screen and (max-width: 435px) {

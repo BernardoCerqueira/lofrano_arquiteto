@@ -2,6 +2,7 @@
 import Image from "next/image"
 import styles from "./Consulting.module.scss"
 import Accordion1 from "./accordion1"
+import Accordion2 from "./accordion2"
 
 export default function Consulting() {
     return (
@@ -18,12 +19,14 @@ export default function Consulting() {
                     className={styles.houseImage}
                     src={"/houseInternet.png"}
                     alt="Internet Globe House"
-                    height={280}
-                    width={310}
+                    height={330}
+                    width={370}
                 />
                 <div className={styles.youReceive}>
                     <h3 className={styles.h3}>Você receberá:</h3>
-                    <div className={styles.secondAccordion}></div>
+                    <div className={styles.secondAccordion}>
+                        <Accordion2/>
+                    </div>
                 </div>
             </div>
         </div>

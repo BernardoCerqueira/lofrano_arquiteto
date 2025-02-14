@@ -1,5 +1,5 @@
 .accordion-button:not(.collapsed) {
-    background-color: white !important;
+    background-color: transparent !important;
     box-shadow: none !important;
 }
 
@@ -10,4 +10,16 @@
 .accordion-body{
     padding-top: .2rem;
     padding-bottom: .2rem;
+}
+
+.accordion-header{
+    background-color: transparent !important;
+}
+
+.accordion-button{
+    background-color: transparent !important;
+}
+
+.accordion{
+    background-color: transparent !important;
 }
