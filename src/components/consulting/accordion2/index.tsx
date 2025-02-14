@@ -28,11 +28,7 @@ function Accordion2() {
                         </p>
                     </AccordionHeader>
                     <AccordionBody accordionId="1" className={styles.body}>
-                        <strong>This is the first item&#39;s accordion body.</strong>
-                        You can modify any of this with custom CSS or overriding our default
-                        variables. It&#39;s also worth noting that just about any HTML can
-                        go within the <code>.accordion-body</code>, though the transition
-                        does limit overflow.
+                        <p>Para clientes que desejam visualizar o resultado completo do conceito desenvolvido na consultoria, oferecemos ilustrações em 3D, proporcionando uma experiência mais realista e detalhada.</p>
                     </AccordionBody>
                 </AccordionItem>
                 <AccordionItem className={styles.accordionItem}>
@@ -42,11 +38,7 @@ function Accordion2() {
                         </p>
                     </AccordionHeader>
                     <AccordionBody accordionId="2" className={styles.body}>
-                        <strong>This is the second item&#39;s accordion body.</strong>
-                        You can modify any of this with custom CSS or overriding our default
-                        variables. It&#39;s also worth noting that just about any HTML can
-                        go within the <code>.accordion-body</code>, though the transition
-                        does limit overflow.
+                        <p>O layout é uma planta baixa ilustrada do ambiente, apresentando a disposição em escala de todos os itens definidos na sua consultoria de interiores exclusiva.</p>
                     </AccordionBody>
                 </AccordionItem>
                 <AccordionItem className={styles.accordionItem}>
@@ -56,11 +48,7 @@ function Accordion2() {
                         </p>
                     </AccordionHeader>
                     <AccordionBody accordionId="3" className={styles.body}>
-                        <strong>This is the third item&#39;s accordion body.</strong>
-                        You can modify any of this with custom CSS or overriding our default
-                        variables. It&#39;s also worth noting that just about any HTML can
-                        go within the <code>.accordion-body</code>, though the transition
-                        does limit overflow.
+                        <p>Trata-se de uma lista detalhada com os itens incluídos na sua consultoria online, contendo descrições, valores e links diretos para a compra online.</p>
                     </AccordionBody>
                 </AccordionItem>
             </Accordion>

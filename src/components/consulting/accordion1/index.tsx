@@ -28,11 +28,8 @@ function Accordion1() {
                         </p>
                     </AccordionHeader>
                     <AccordionBody accordionId="1" className={styles.body}>
-                        <strong>This is the first item&#39;s accordion body.</strong>
-                        You can modify any of this with custom CSS or overriding our default
-                        variables. It&#39;s also worth noting that just about any HTML can
-                        go within the <code>.accordion-body</code>, though the transition
-                        does limit overflow.
+                        <p>Em nosso <strong>primeiro contato</strong> pelo WhatsApp, você nos envia vídeos e fotos dos ambientes que deseja projetar.</p>
+                        <p>Conversamos sobre suas preferências, desejos, necessidades e tudo o que espera para transformar o espaço dos seus sonhos em realidade.</p>
                     </AccordionBody>
                 </AccordionItem>
                 <AccordionItem className={styles.accordionItem}>
@@ -42,11 +39,8 @@ function Accordion1() {
                         </p>
                     </AccordionHeader>
                     <AccordionBody accordionId="2" className={styles.body}>
-                        <strong>This is the second item&#39;s accordion body.</strong>
-                        You can modify any of this with custom CSS or overriding our default
-                        variables. It&#39;s also worth noting that just about any HTML can
-                        go within the <code>.accordion-body</code>, though the transition
-                        does limit overflow.
+                        <p>Após recebermos suas imagens, você receberá uma <strong>proposta exclusiva</strong>.</p>
+                        <p>Ela inclui o passo a passo dos nossos processos, informações detalhadas sobre o investimento e o prazo de execução, tudo personalizado para atender às suas necessidades.</p>
                     </AccordionBody>
                 </AccordionItem>
                 <AccordionItem className={styles.accordionItem}>
@@ -56,11 +50,9 @@ function Accordion1() {
                         </p>
                     </AccordionHeader>
                     <AccordionBody accordionId="3" className={styles.body}>
-                        <strong>This is the third item&#39;s accordion body.</strong>
-                        You can modify any of this with custom CSS or overriding our default
-                        variables. It&#39;s also worth noting that just about any HTML can
-                        go within the <code>.accordion-body</code>, though the transition
-                        does limit overflow.
+                        <p>Após a aprovação da proposta e a confirmação do pagamento, agendamos sua <strong>reunião virtual</strong>.
+                        </p>
+                        <p>Nessa etapa, aprofundamos o entendimento sobre seus desejos e necessidades, garantindo que todos os detalhes sejam incorporados aos seus novos ambientes.</p>
                     </AccordionBody>
                 </AccordionItem>
                 <AccordionItem className={styles.accordionItem}>
@@ -70,11 +62,7 @@ function Accordion1() {
                         </p>
                     </AccordionHeader>
                     <AccordionBody accordionId="4" className={styles.body}>
-                        <strong>This is the third item&#39;s accordion body.</strong>
-                        You can modify any of this with custom CSS or overriding our default
-                        variables. It&#39;s also worth noting that just about any HTML can
-                        go within the <code>.accordion-body</code>, though the transition
-                        does limit overflow.
+                        <p>Desenvolvemos o <strong>conceito arquitetônico</strong> da consultoria com base em todas as informações que você compartilhou ao longo de nossas conversas, garantindo que cada detalhe reflita seus desejos e necessidades.</p>
                     </AccordionBody>
                 </AccordionItem>
                 <AccordionItem className={styles.accordionItem}>
@@ -85,7 +73,7 @@ function Accordion1() {
                     </AccordionHeader>
                     <AccordionBody accordionId="5" className={styles.body}>
                         <p>Com o material que você receberá, saberá exatamanete quais itens adquirir.</p>
-                        <p>E, caso surja qualquer dúvida durante a execução, estaremos sempre dispostos a lhe auxiliar.</p>
+                        <p>E, caso surja qualquer dúvida durante a <strong>execução</strong>, estaremos sempre dispostos a lhe auxiliar.</p>
                     </AccordionBody>
                 </AccordionItem>
             </Accordion>

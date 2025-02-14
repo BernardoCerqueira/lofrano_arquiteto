@@ -19,8 +19,8 @@ export default function Consulting() {
                     className={styles.houseImage}
                     src={"/houseInternet.png"}
                     alt="Internet Globe House"
-                    height={330}
-                    width={370}
+                    height={270}
+                    width={270}
                 />
                 <div className={styles.youReceive}>
                     <h3 className={styles.h3}>Você receberá:</h3>
