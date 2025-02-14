@@ -10,7 +10,7 @@ import {
 
 function Accordion1() {
     const [open, setOpen] = useState('1');
-    const toggle = (id: any) => {
+    const toggle = (id: string) => {
         if (open === id) {
             setOpen('')
         } else {
