@@ -2,15 +2,57 @@
 @use "../../styles/measures.scss";
 
 .container{
+    height: fit-content;
+    min-height: 100vh;
     padding-top: measures.$section-pt;
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 2rem;
 }
 
 .contentDiv{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+}
+
+.howItWorks{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.firstAccordion{
+    width: 400px;
+    margin: auto;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 1rem;
+    background-color: white;
+}
+
+.houseImage{
+    margin: auto;
+    margin-top: 5rem;
+    margin-left: 10.4rem;
+}
+
+.youReceive{
+    text-align: center;
+}
+
+.h2{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: colors.$gray;
+    text-align: center;
+    font-size: measures.$title;
+}
+
+.h3{
+    text-transform: uppercase;
+    color: colors.$darkGray;
+    font-weight: bold;
 }
 
 @media screen and (max-width: 435px) {

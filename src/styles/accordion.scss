@@ -1,0 +1,8 @@
+.accordion-button:not(.collapsed) {
+    background-color: white !important;
+    box-shadow: none !important;
+}
+
+.accordion-button:active, .accordion-button:focus{
+    box-shadow: none !important;
+}

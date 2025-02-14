@@ -1,24 +1,29 @@
+"use client"
 import Image from "next/image"
 import styles from "./Consulting.module.scss"
+import Accordion1 from "./accordion1"
 
-export default function Consulting(){
-    return(
+export default function Consulting() {
+    return (
         <div className={styles.container}>
-            <h2>Consultoria Online</h2>
+            <h2 className={styles.h2}>Consultoria Online</h2>
             <div className={styles.contentDiv}>
                 <div className={styles.howItWorks}>
-                    <h3>Como funciona?</h3>
-                    <div></div>
+                    <h3 className={styles.h3}>Como funciona?</h3>
+                    <div className={styles.firstAccordion}>
+                        <Accordion1/>
+                    </div>
                 </div>
                 <Image
                     className={styles.houseImage}
                     src={"/houseInternet.png"}
                     alt="Internet Globe House"
-                    height={200}
-                    width={230}
+                    height={280}
+                    width={310}
                 />
                 <div className={styles.youReceive}>
-                    
+                    <h3 className={styles.h3}>Você receberá:</h3>
+                    <div className={styles.secondAccordion}></div>
                 </div>
             </div>
         </div>

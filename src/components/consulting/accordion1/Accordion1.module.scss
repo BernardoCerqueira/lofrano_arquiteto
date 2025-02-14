@@ -1,0 +1,21 @@
+@use "../../../styles/colors.scss";
+
+.title {
+    font-size: 26px;
+    margin: 0;
+    color: colors.$darkGray;
+    font-weight: bold;
+}
+
+.header {
+    background-color: white;
+    border: none;
+}
+
+.accordionItem {
+    border: none;
+    text-align: justify;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
