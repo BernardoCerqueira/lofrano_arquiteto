@@ -23,7 +23,7 @@ export default function Consulting() {
                     width={270}
                 />
                 <div className={styles.youReceive}>
-                    <h3 className={styles.h3}>Você receberá:</h3>
+                    <h3 className={`${styles.h3} ${styles.h3YR}`}>Você receberá:</h3>
                     <div className={styles.secondAccordion}>
                         <Accordion2/>
                     </div>

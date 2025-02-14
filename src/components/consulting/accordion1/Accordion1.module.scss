@@ -29,3 +29,21 @@
     overflow-wrap: break-word;
     hyphens: auto;
 }
+
+@media screen and (max-width: 1416px) {
+    .title{
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 1214px){
+    .title{
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 827px) {
+    .title{
+        font-size: 21px;
+    }
+}
