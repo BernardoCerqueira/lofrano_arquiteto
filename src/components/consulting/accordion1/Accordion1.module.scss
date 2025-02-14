@@ -12,6 +12,15 @@
     border: none;
 }
 
+.body{
+    p{
+        margin-bottom: 10px;
+    }
+    &:last-child{
+        margin-bottom: 0px;
+    }
+}
+
 .accordionItem {
     border: none;
     text-align: justify;

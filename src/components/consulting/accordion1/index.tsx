@@ -27,7 +27,7 @@ function Accordion1() {
                             1. Conversa
                         </p>
                     </AccordionHeader>
-                    <AccordionBody accordionId="1">
+                    <AccordionBody accordionId="1" className={styles.body}>
                         <strong>This is the first item&#39;s accordion body.</strong>
                         You can modify any of this with custom CSS or overriding our default
                         variables. It&#39;s also worth noting that just about any HTML can
@@ -41,7 +41,7 @@ function Accordion1() {
                             2. Proposta
                         </p>
                     </AccordionHeader>
-                    <AccordionBody accordionId="2">
+                    <AccordionBody accordionId="2" className={styles.body}>
                         <strong>This is the second item&#39;s accordion body.</strong>
                         You can modify any of this with custom CSS or overriding our default
                         variables. It&#39;s also worth noting that just about any HTML can
@@ -55,7 +55,7 @@ function Accordion1() {
                             3. Reunião
                         </p>
                     </AccordionHeader>
-                    <AccordionBody accordionId="3">
+                    <AccordionBody accordionId="3" className={styles.body}>
                         <strong>This is the third item&#39;s accordion body.</strong>
                         You can modify any of this with custom CSS or overriding our default
                         variables. It&#39;s also worth noting that just about any HTML can
@@ -69,7 +69,7 @@ function Accordion1() {
                             4. Criação
                         </p>
                     </AccordionHeader>
-                    <AccordionBody accordionId="4">
+                    <AccordionBody accordionId="4" className={styles.body}>
                         <strong>This is the third item&#39;s accordion body.</strong>
                         You can modify any of this with custom CSS or overriding our default
                         variables. It&#39;s also worth noting that just about any HTML can
@@ -83,7 +83,7 @@ function Accordion1() {
                             5. Realização
                         </p>
                     </AccordionHeader>
-                    <AccordionBody accordionId="5">
+                    <AccordionBody accordionId="5" className={styles.body}>
                         <p>Com o material que você receberá, saberá exatamanete quais itens adquirir.</p>
                         <p>E, caso surja qualquer dúvida durante a execução, estaremos sempre dispostos a lhe auxiliar.</p>
                     </AccordionBody>

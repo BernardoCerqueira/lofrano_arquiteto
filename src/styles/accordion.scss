@@ -6,3 +6,8 @@
 .accordion-button:active, .accordion-button:focus{
     box-shadow: none !important;
 }
+
+.accordion-body{
+    padding-top: .2rem;
+    padding-bottom: .2rem;
+}
