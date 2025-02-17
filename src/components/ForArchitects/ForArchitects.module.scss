@@ -41,7 +41,6 @@
         text-transform: uppercase;
     }
 
-
     .bullet {
         margin: 0 .4rem;
         color: colors.$darkGray;
@@ -94,11 +93,9 @@
             font-size: 22px;
         }
     }
-
     .text {
         font-size: 17px;
     }
-
     .icon {
         height: 40px;
     }
@@ -108,14 +105,12 @@
     .container {
         gap: 4rem;
     }
-
     .subtitle {
         width: 100%;
         display: flex;
         flex-direction: column;
         margin: auto;
     }
-
     .text {
         margin: 4rem auto 6rem auto;
         padding: 0 2rem;
@@ -131,7 +126,6 @@
     .subtitle {
         display: none;
     }
-
     .listDiv {
         display: block;
 
@@ -162,7 +156,6 @@
         }
 
     }
-
     .text {
         padding: 0 1.5rem;
         font-size: 15px;
@@ -177,11 +170,9 @@
     .container {
         padding-top: 10rem;
     }
-
     .title {
         font-size: 26px;
     }
-
     .listDiv{
         .list{
             li{
