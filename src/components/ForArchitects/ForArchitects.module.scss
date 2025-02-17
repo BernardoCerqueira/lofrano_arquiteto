@@ -2,13 +2,11 @@
 @use "../../styles/measures.scss";
 
 .container {
-    min-height: 100vh;
     height: fit-content;
     padding-top: measures.$section-pt;
     display: flex;
     flex-direction: column;
     gap: 6rem;
-    padding-bottom: 2rem; //temporário
 }
 
 .title {

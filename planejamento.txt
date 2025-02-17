@@ -22,7 +22,7 @@ TELAS:
 3. Services [OK]
 4. Consulting [OK]
 5. Projects [OK]
-6. 4Architects
+6. 4Architects [OK]
 7. Contact
 8. Footer
 
