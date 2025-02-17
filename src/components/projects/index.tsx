@@ -1,5 +1,6 @@
 "use client"
 
+import images from "@/database/images";
 import styles from "./Projects.module.scss"
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/css";
@@ -28,45 +29,22 @@ export default function Projects() {
                     }}
                     className={styles.splide}
                 >
-                    <SplideSlide className={styles.slide}>
-                        <div>
-                            <Image
-                                src="/studio-chilli1.png"
-                                alt="Projeto 1"
-                                height={400}
-                                width={700}
-                            />
-                            <p className={styles.caption}>
-                                Estúdio Banda Chilli 1
-                            </p>
-                        </div>
-                    </SplideSlide>
-                    <SplideSlide className={styles.slide}>
-                        <div>
-                            <Image
-                                src="/studio-chilli1.png"
-                                alt="Projeto 1"
-                                height={400}
-                                width={700}
-                            />
-                            <p className={styles.caption}>
-                                Estúdio Banda Chilli 2
-                            </p>
-                        </div>
-                    </SplideSlide>
-                    <SplideSlide className={styles.slide}>
-                        <div>
-                            <Image
-                                src="/banheiro-reformado.png"
-                                alt="Projeto 1"
-                                height={400}
-                                width={700}
-                            />
-                            <p className={styles.caption}>
-                                Reforma Banheiro
-                            </p>
-                        </div>
-                    </SplideSlide>
+                    {images.map(project => (
+                        <SplideSlide className={styles.slide} key={project.id}>
+                            <div>
+                                <Image
+                                    src={project.imgPath}
+                                    alt={project.alt}
+                                    height={400}
+                                    width={700}
+                                />
+                                <p className={styles.caption}>
+                                    {project.alt}
+                                </p>
+                            </div>
+                        </SplideSlide>
+                    ))}
+
                 </Splide>
             </div>
         </div>
