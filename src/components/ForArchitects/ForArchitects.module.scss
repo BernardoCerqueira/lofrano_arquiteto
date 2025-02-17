@@ -8,6 +8,7 @@
     display: flex;
     flex-direction: column;
     gap: 5rem;
+    padding-bottom: 2rem; //temporário
 }
 
 .title {
@@ -23,21 +24,28 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    text-transform: uppercase;
     width: 100%;
 }
 
 .subtitle {
-    font-size: 26px;
-    font-weight: bold;
-    color: colors.$darkGray;
-    filter: brightness(.8);
-    letter-spacing: 2px;
+    display: flex;
+    width: 100%;
+    place-content: center;
+
+    p {
+        font-size: 26px;
+        font-weight: bold;
+        color: colors.$darkGray;
+        filter: brightness(.7);
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
 
     .bullet {
         margin: 0 .4rem;
         color: colors.$darkGray;
-        filter: brightness(.8);
+        filter: brightness(.7);
     }
 }
 
@@ -49,6 +57,8 @@
     word-break: break-word;
     overflow-wrap: break-word;
     hyphens: auto;
+    text-transform: uppercase;
+    font-size: 18px;
 }
 
 .btnDiv {
@@ -62,6 +72,11 @@
     border: none;
     background-color: transparent;
     filter: opacity(.3);
+    transition: all .3s ease;
+
+    &:hover{
+        filter: opacity(1);
+    }
 }
 
 .icon {
@@ -69,13 +84,19 @@
     width: auto;
 }
 
+.listDiv {
+    display: none;
+}
+
 @media screen and (max-width: 1210px) {
     .subtitle {
-        font-size: 22px;
+        p {
+            font-size: 22px;
+        }
     }
 
     .text {
-        font-size: 18px;
+        font-size: 17px;
     }
 
     .icon {
@@ -84,22 +105,90 @@
 }
 
 @media screen and (max-width: 980px) {
-    .container{
+    .container {
         gap: 4rem;
     }
+
     .subtitle {
         width: 100%;
         display: flex;
         flex-direction: column;
         margin: auto;
     }
+
     .text {
         margin: 4rem auto 6rem auto;
+        padding: 0 2rem;
+        width: auto;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .container{
+        gap: 3rem;
+    }
+    .subtitle {
+        display: none;
+    }
+
+    .listDiv {
+        display: block;
+
+        .list {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            place-items: center;
+            gap: .5rem;
+
+            li {
+                list-style: none;
+                margin: 0;
+
+                p {
+                    margin: 0;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    color: colors.$darkGray;
+                    filter: brightness(.7);
+                    letter-spacing: 1px;
+                    font-size: 22px;
+                    text-align: center;
+                }
+            }
+        }
+
+    }
+
+    .text {
+        padding: 0 1.5rem;
+        font-size: 15px;
+        margin: 3.5rem 0 5rem 0;
+    }
+    .icon{
+        height: 38px;
     }
 }
 
 @media screen and (max-width: 435px) {
     .container {
         padding-top: 10rem;
+    }
+
+    .title {
+        font-size: 26px;
+    }
+
+    .listDiv{
+        .list{
+            li{
+                p{
+                    font-size: 20px;
+                }
+            }
+        }
     }
 }
