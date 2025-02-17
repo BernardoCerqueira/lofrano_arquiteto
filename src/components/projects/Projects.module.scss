@@ -1,19 +1,108 @@
-@use "../../styles/colors.scss";;
+@use "../../styles/colors.scss";
 @use "../../styles/measures.scss";
 
-.container{
+.container {
     height: fit-content;
-    padding-top: measures.$section-pt;
     display: flex;
     flex-direction: column;
-    gap: 0rem;
-
+    padding-top: measures.$section-pt;
+    padding-bottom: 5rem; //temporário
 }
 
-.title{
+.title {
     text-transform: uppercase;
     letter-spacing: 2px;
     color: colors.$gray;
     text-align: center;
     font-size: measures.$title;
+    margin-bottom: 1rem;
+}
+
+.slideDiv {
+    width: 95%;
+    max-width: 1500px;
+    text-align: center;
+    margin: auto;
+}
+
+.splide {
+    height: fit-content;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+}
+
+.slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 100%;
+        height: auto;
+        min-height: 350px;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+}
+
+.slideContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.caption{
+    text-transform: uppercase;
+    margin-top: 1rem;
+    letter-spacing: 1px;
+}
+
+@media screen and (max-width: 1100px) {
+    .slideDiv {
+        width: 100%;
+    }
+
+    .splide{
+        padding-top: 3rem;
+    }
+
+    .slide {
+        img {
+            max-height: 470px;
+            min-height: 380px;
+            height: auto;
+        }
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .slideDiv {
+        width: 100%;
+        padding: 0 .2rem;
+    }
+
+    .splide {
+        width: 100%;
+    }
+
+    .slide {
+        width: 100%;
+
+        img {
+            height: 330px;
+            min-height: 0;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+@media screen and (max-width: 435px) {
+    .container {
+        padding-top: 5rem;
+    }
 }
