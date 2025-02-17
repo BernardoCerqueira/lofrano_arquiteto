@@ -43,8 +43,6 @@ export default function RootLayout({
       </head>
       <body className={`${lato.variable}`}>
         {children}
-
-
       </body>
     </html>
   );

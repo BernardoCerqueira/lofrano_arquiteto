@@ -22,7 +22,7 @@ export default function Hero(){
                 <Link href={"#4architects"} className={styles.link}>
                     <li className={styles.listItem}>PARA ARQUITETOS</li>
                 </Link>
-                <Link href={"#contact"} className={styles.link}>
+                <Link href={"#budget"} className={styles.link}>
                     <li className={styles.listItem}>CONTATOS</li>
                 </Link>                              
             </ul>
