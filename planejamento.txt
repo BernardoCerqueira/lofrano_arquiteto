@@ -24,6 +24,7 @@ TELAS:
 5. Projects [OK]
 6. 4Architects
 7. Contact
+8. Footer
 
 ---------------
 

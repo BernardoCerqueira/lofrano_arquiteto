@@ -1,0 +1,105 @@
+@use "../../styles/colors.scss";
+@use "../../styles/measures.scss";
+
+.container {
+    min-height: 100vh;
+    height: fit-content;
+    padding-top: measures.$section-pt;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+.title {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: colors.$gray;
+    text-align: center;
+    font-size: measures.$title;
+    margin-bottom: 1rem;
+}
+
+.contentDiv {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.subtitle {
+    font-size: 26px;
+    font-weight: bold;
+    color: colors.$darkGray;
+    filter: brightness(.8);
+    letter-spacing: 2px;
+
+    .bullet {
+        margin: 0 .4rem;
+        color: colors.$darkGray;
+        filter: brightness(.8);
+    }
+}
+
+.text {
+    width: 845px;
+    text-align: justify;
+    margin: 5rem auto 8rem auto;
+    word-spacing: 3px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+.btnDiv {
+    margin: auto;
+    display: flex;
+    gap: 2rem;
+}
+
+.btn {
+    padding: 0rem;
+    border: none;
+    background-color: transparent;
+    filter: opacity(.3);
+}
+
+.icon {
+    height: 50px;
+    width: auto;
+}
+
+@media screen and (max-width: 1210px) {
+    .subtitle {
+        font-size: 22px;
+    }
+
+    .text {
+        font-size: 18px;
+    }
+
+    .icon {
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .container{
+        gap: 4rem;
+    }
+    .subtitle {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+    .text {
+        margin: 4rem auto 6rem auto;
+    }
+}
+
+@media screen and (max-width: 435px) {
+    .container {
+        padding-top: 10rem;
+    }
+}
