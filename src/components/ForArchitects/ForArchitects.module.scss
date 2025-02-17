@@ -7,7 +7,7 @@
     padding-top: measures.$section-pt;
     display: flex;
     flex-direction: column;
-    gap: 5rem;
+    gap: 6rem;
     padding-bottom: 2rem; //temporário
 }
 
@@ -51,7 +51,7 @@
 .text {
     width: 845px;
     text-align: justify;
-    margin: 5rem auto 8rem auto;
+    margin: 3.5rem auto 7.5rem auto;
     word-spacing: 3px;
     word-break: break-word;
     overflow-wrap: break-word;
@@ -159,7 +159,7 @@
     .text {
         padding: 0 1.5rem;
         font-size: 15px;
-        margin: 3.5rem 0 5rem 0;
+        margin: 3.5rem 0 4rem 0;
     }
     .icon{
         height: 38px;
