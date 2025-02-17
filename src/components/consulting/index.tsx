@@ -20,7 +20,6 @@ export default function Consulting() {
                     alt="Internet Globe House"
                     height={310}
                     width={310}
-                    data-aos="flip-right"
                 />
                 <div className={styles.youReceive}>
                     <h3 className={`${styles.h3} ${styles.h3YR}`}>Você receberá:</h3>

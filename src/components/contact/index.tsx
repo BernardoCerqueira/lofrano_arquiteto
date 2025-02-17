@@ -8,7 +8,7 @@ export default function Contact() {
         <div className={styles.container}>
             <h2 className={styles.title}>Contatos</h2>
             <div className={styles.contentDiv}>
-                <Form action="" className={styles.form} id="budget" data-aos="fade-right">
+                <Form action="" className={styles.form} id="budget">
                     <legend className={styles.formTitle}>Orçamentos:</legend>
                     <div className={styles.inputDiv}>
                         <Input

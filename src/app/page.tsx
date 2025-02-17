@@ -9,17 +9,8 @@ import Consulting from "@/components/consulting";
 import Projects from "@/components/projects";
 import ForArchitects from "@/components/ForArchitects";
 import Contact from "@/components/contact";
-import { useEffect } from "react";
-import Aos from "aos";
 
 export default function Home() {
-  useEffect(() => {
-    Aos.init({
-      duration: 1000,
-      once: true
-    })
-  }, [])
-  
   return (
     <div className={styles.page}>
       <CommonHeader />

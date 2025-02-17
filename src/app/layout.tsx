@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.scss";
 import "bootstrap/dist/css/bootstrap.min.css"
-import "aos/dist/aos.css"
 import { Lato } from "next/font/google"
 
 const lato = Lato({

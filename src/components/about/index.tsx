@@ -5,7 +5,7 @@ export default function About() {
     return (
         <>
             <div className={styles.container}>
-                <h2 className={styles.title} data-aos="fade-in">Sobre</h2>
+                <h2 className={styles.title}>Sobre</h2>
                 <div
                     className={styles.contentDiv}
                 >
@@ -15,9 +15,8 @@ export default function About() {
                         width={420}
                         height={550}
                         className={styles.profilePic}
-                        data-aos="fade-right"
                     />
-                    <div className={styles.description} data-aos="fade-left">
+                    <div className={styles.description}>
                         <p className={styles.descriptionText}>
                             Sou arquiteto e tenho como objetivo transformar a vida das pessoas, tornando sonhos realidade ao trazer para o mundo físico tudo o que foi cuidadosamente planejado e desenhado no papel.
                         </p>

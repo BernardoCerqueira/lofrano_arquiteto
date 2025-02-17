@@ -4,7 +4,7 @@ export default function Services() {
     return (
         <div className={styles.container}>
             <h2 className={styles.title}>Serviços</h2>
-            <div className={styles.cards} data-aos="fade-up">
+            <div className={styles.cards}>
                 <div className={styles.card}>
                     <h3 className={styles.cardTitle}>Projetos residenciais e comerciais</h3>
                     <p className={styles.cardText}>Projetos detalhados de residências e estabelecimentos comerciais, com imersão realista em 3D e alta qualidade na entrega.</p>
