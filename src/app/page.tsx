@@ -4,6 +4,7 @@ import CommonHeader from "@/components/common/CommonHeader";
 import About from "@/components/about";
 import Services from "@/components/services";
 import Consulting from "@/components/consulting";
+import Projects from "@/components/projects";
 
 export default function Home() {
   return (
@@ -21,7 +22,9 @@ export default function Home() {
       <section id="consulting">
         <Consulting/>
       </section>
-      <section id="projects"></section>
+      <section id="projects">
+        <Projects/>
+      </section>
       <section id="4architects"></section>
       <section id="contact"></section>
     </div>

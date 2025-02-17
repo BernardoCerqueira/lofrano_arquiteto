@@ -1,0 +1,19 @@
+@use "../../styles/colors.scss";;
+@use "../../styles/measures.scss";
+
+.container{
+    height: fit-content;
+    padding-top: measures.$section-pt;
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
+
+}
+
+.title{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: colors.$gray;
+    text-align: center;
+    font-size: measures.$title;
+}

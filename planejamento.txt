@@ -6,8 +6,8 @@ HISTÓRIAS DE USO / REQUISITOS:
 
 FEATURINGS:
 
-- Logo escura fica clara e menor no header quando a página desce (transição) [OK]
-- Accordion na consultoria online
+- Logo escura fica clara e menor no header quando a página desce [OK]
+- Accordion na consultoria online [OK]
 - Slides apenas com imagens (Splide.js)
 - Seção para email
 
@@ -20,7 +20,7 @@ TELAS:
 1. Hero [OK]
 2. About [OK]
 3. Services [OK]
-4. Consulting
+4. Consulting [OK]
 5. Projects
 6. 4Architects
 7. Contact
@@ -35,3 +35,5 @@ Adicionar essa media-query para todas as seções
         padding-top: 10rem;
     }
 }
+
+Services: mobile: "saiba mais" ou descrição aparecendo sempre?
