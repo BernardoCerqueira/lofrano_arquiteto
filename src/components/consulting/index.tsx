@@ -1,4 +1,3 @@
-"use client"
 import Image from "next/image"
 import styles from "./Consulting.module.scss"
 import Accordion1 from "./accordion1"

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: "Lofrano Arquitetura",
   description: "Escritório de Arquitetura - Transforme seus sonhos em realidade com projetos sob medida feitos por especialistas - Localizado em Petrópolis/RJ e com atuação remota.",
   robots: "index, follow",
-  
+
   openGraph: {
     type: "website",
     description: "Escritório de Arquitetura - Transforme seus sonhos em realidade com projetos sob medida feitos por especialistas.",
@@ -26,7 +26,6 @@ export const metadata: Metadata = {
         alt: "Lofrano Arquitetura"
       }
     ],
-    
   },
   keywords: "arquitetura, lofrano, arquiteto, petrópolis, rio de janeiro, design, interiores, construção, projetos, projeto, arquitetônico, joão, pedro, serra, serrana, arquiteta, joão pedro"
 }

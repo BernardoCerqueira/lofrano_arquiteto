@@ -1,5 +1,3 @@
-"use client"
-
 import useIsSectionOutOfView from "@/hooks/useIsSectionOutOfView"
 import styles from "./CommonHeader.module.scss"
 import Image from "next/image";

@@ -2,11 +2,16 @@ import styles from "./About.module.scss"
 import Image from "next/image"
 
 export default function About() {
+
+
     return (
         <>
             <div className={styles.container}>
                 <h2 className={styles.title}>Sobre</h2>
-                <div className={styles.contentDiv}>
+                <div
+                    className={styles.contentDiv}
+                    
+                >
                     <Image
                         src={"/profile.png"}
                         alt="Foto de perfil"

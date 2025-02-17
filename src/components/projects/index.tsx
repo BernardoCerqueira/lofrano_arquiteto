@@ -1,5 +1,3 @@
-"use client"
-
 import images from "@/database/images";
 import styles from "./Projects.module.scss"
 import { Splide, SplideSlide } from "@splidejs/react-splide";

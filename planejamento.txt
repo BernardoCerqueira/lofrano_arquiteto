@@ -30,4 +30,6 @@ TELAS:
 
 Fazer responsividade para telas muito grandes
 
-Services: mobile: "saiba mais" ou descrição aparecendo sempre?
+Seta dos slides
+
+Lógica de email

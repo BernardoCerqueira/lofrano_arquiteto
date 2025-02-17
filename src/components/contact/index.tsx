@@ -1,5 +1,3 @@
-"use client"
-
 import { Button, Form, Input } from "reactstrap"
 import styles from "./Contact.module.scss"
 import Link from "next/link"

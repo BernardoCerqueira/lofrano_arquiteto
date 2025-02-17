@@ -1,3 +1,5 @@
+"use client"
+
 import Hero from "@/components/hero";
 import styles from "./page.module.scss";
 import CommonHeader from "@/components/common/CommonHeader";

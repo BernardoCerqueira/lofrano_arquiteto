@@ -1,5 +1,3 @@
-"use client"
-
 import styles from "./ForArchitects.module.scss"
 import { FaFacebookSquare, FaInstagram, FaWhatsapp } from "react-icons/fa"
 import Link from "next/link"
