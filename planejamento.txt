@@ -23,7 +23,7 @@ TELAS:
 4. Consulting [OK]
 5. Projects [OK]
 6. 4Architects [OK]
-7. Contact
+7. Contact [OK]
 8. Footer
 
 ---------------
@@ -31,5 +31,3 @@ TELAS:
 Fazer responsividade para telas muito grandes
 
 Services: mobile: "saiba mais" ou descrição aparecendo sempre?
-
-Arrumar o espaçamento entre seções

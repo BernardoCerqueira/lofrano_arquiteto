@@ -6,7 +6,6 @@
     height: fit-content;
     display: flex;
     flex-direction: column;
-    text-transform: uppercase;
     text-align: center;
     gap: 4rem;
     padding-top: measures.$section-pt;
@@ -17,6 +16,7 @@
     color: colors.$gray;
     letter-spacing: 2px;
     pointer-events: none;
+    text-transform: uppercase;
 }
 
 .cards {
@@ -58,10 +58,11 @@
     pointer-events: none;
     margin-bottom: 5rem;
     height: 90px;
+    text-transform: uppercase;
 }
 
 .cardText {
-    font-size: 16px;
+    font-size: 21px;
     color: black;
     opacity: 0;
     transition: all .6 ease;
@@ -82,12 +83,16 @@
     }
 
     .card {
-        height: 350px;
+        height: 360px;
         min-height: fit-content;
     }
 
     .cardTitle {
         height: 50px;
+    }
+
+    .cardText {
+        font-size: 18px;
     }
 }
 
@@ -102,14 +107,14 @@
     }
 
     .cardTitle {
-        font-size: 18px;
+        font-size: 20px;
         height: 10px;
         padding: 0;
         margin-bottom: 7rem;
     }
 
     .cardText {
-        font-size: 14px;
+        font-size: 18px;
         margin: 0;
         display: none;
 
@@ -118,6 +123,7 @@
     .learnMore {
         opacity: 1;
         margin-bottom: 0;
+        font-size: 18px;
     }
 
     .card {
@@ -142,7 +148,7 @@
             }
 
             .cardTitle {
-                margin-bottom: 3rem;
+                margin-bottom: 2rem;
             }
         }
     }
@@ -152,11 +158,10 @@
     .container {
         padding-top: 10rem;
     }
-}
 
-@media screen and (max-width: 435px) {
     .card {
-        height: 250px;
+        height: 300px;
+        min-height: fit-content;
 
         &:hover {
             .cardTitle {
@@ -164,7 +169,8 @@
             }
         }
     }
+
     .cardTitle {
-        margin-bottom: 10rem;
+        margin-bottom: 13rem;
     }
 }

@@ -7,19 +7,29 @@ type Database = {
 const database: Database = [
     {
         id: 1,
-        imgPath: "/studio-chilli1.png",
-        alt: "Projeto 1"
+        imgPath: "/projects/studio_chilli01.png",
+        alt: "Estúdio Banda Chilli 1"
     },
     {
         id: 2,
-        imgPath: "/studio-chilli1.png",
-        alt: "Projeto 2"
+        imgPath: "/projects/studio_chilli02.png",
+        alt: "Estúdio Banda Chilli 2"
     },
     {
         id: 3,
-        imgPath: "/banheiro-reformado.png",
-        alt: "Projeto 3"
-    }
+        imgPath: "/projects/casa01.jpg",
+        alt: "Projeto de Casa 1"
+    },
+    {
+        id: 4,
+        imgPath: "/projects/casa02.png",
+        alt: "Projeto de Casa 2"
+    },
+    {
+        id: 5,
+        imgPath: "/projects/banheiro01.png",
+        alt: "Projeto de Banheiro"
+    },
 ]
 
 export default database
