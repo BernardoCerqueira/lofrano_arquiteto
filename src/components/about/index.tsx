@@ -2,15 +2,12 @@ import styles from "./About.module.scss"
 import Image from "next/image"
 
 export default function About() {
-
-
     return (
         <>
-            <div className={styles.container}>
+            <div className={styles.container} data-aos="fade-up">
                 <h2 className={styles.title}>Sobre</h2>
                 <div
                     className={styles.contentDiv}
-                    
                 >
                     <Image
                         src={"/profile.png"}

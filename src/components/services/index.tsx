@@ -2,7 +2,7 @@ import styles from "./Services.module.scss"
 
 export default function Services() {
     return (
-        <div className={styles.container}>
+        <div className={styles.container} data-aos="zoom-in">
             <h2 className={styles.title}>Serviços</h2>
             <div className={styles.cards}>
                 <div className={styles.card}>

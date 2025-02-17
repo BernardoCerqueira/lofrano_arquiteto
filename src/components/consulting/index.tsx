@@ -5,13 +5,13 @@ import Accordion2 from "./accordion2"
 
 export default function Consulting() {
     return (
-        <div className={styles.container}>
-            <h2 className={styles.h2}>Consultoria Online</h2>
+        <div className={styles.container} >
+            <h2 className={styles.h2} data-aos="fade-down">Consultoria Online</h2>
             <div className={styles.contentDiv}>
                 <div className={styles.howItWorks}>
-                    <h3 className={styles.h3}>Como funciona?</h3>
-                    <div className={styles.firstAccordion}>
-                        <Accordion1/>
+                    <h3 className={styles.h3} data-aos="fade-down">Como funciona?</h3>
+                    <div className={styles.firstAccordion} data-aos="fade-right">
+                        <Accordion1 />
                     </div>
                 </div>
                 <Image
@@ -20,11 +20,12 @@ export default function Consulting() {
                     alt="Internet Globe House"
                     height={310}
                     width={310}
+                    data-aos="flip-left"
                 />
                 <div className={styles.youReceive}>
-                    <h3 className={`${styles.h3} ${styles.h3YR}`}>Você receberá:</h3>
-                    <div className={styles.secondAccordion}>
-                        <Accordion2/>
+                    <h3 className={`${styles.h3} ${styles.h3YR}`} data-aos="fade-down">Você receberá:</h3>
+                    <div className={styles.secondAccordion} data-aos="fade-up">
+                        <Accordion2 />
                     </div>
                 </div>
             </div>
