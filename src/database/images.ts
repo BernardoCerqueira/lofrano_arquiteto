@@ -22,11 +22,6 @@ const database: Database = [
     },
     {
         id: 4,
-        imgPath: "/projects/casa02.png",
-        alt: "Projeto de Casa 2"
-    },
-    {
-        id: 5,
         imgPath: "/projects/banheiro01.png",
         alt: "Projeto de Banheiro"
     },

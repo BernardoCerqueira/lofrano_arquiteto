@@ -15,11 +15,13 @@ export default function Projects() {
                     options={{
                         type: "loop",
                         perPage: 2,
+                        perMove: 1,
                         gap: "2vw",
                         autoplay: true,
                         interval: 6500,
                         arrows: true,
                         pagination: true,
+
                         breakpoints: {
                             1100:
                             {
@@ -35,8 +37,8 @@ export default function Projects() {
                                 <Image
                                     src={project.imgPath}
                                     alt={project.alt}
-                                    height={400}
-                                    width={700}
+                                    height={800}
+                                    width={1400}
                                 />
                             </div>
                         </SplideSlide>
