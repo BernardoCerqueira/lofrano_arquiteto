@@ -31,6 +31,11 @@
 .listItem{
     font-size: 28px;
     letter-spacing: 2px;
+    transition: all .3s ease;
+
+    &:hover{
+        color: colors.$gray;
+    }
 }
 
 .link{
