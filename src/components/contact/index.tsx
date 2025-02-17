@@ -36,9 +36,9 @@ export default function Contact() {
                         Enviar
                     </Button>
                 </Form>
-                <div className={styles.contactDiv}>
+                <div className={styles.contactDiv} data-aos="fade-up">
                     <p className={styles.andOr}>E/OU</p>
-                    <div className={styles.btnDiv} data-aos="fade-up">
+                    <div className={styles.btnDiv}>
                         <Link
                             href={"https://www.facebook.com/people/Lofrano-Arquitetura/61572186776421/?_rdr"}
                             target="_blank"
