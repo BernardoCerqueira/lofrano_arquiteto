@@ -38,13 +38,9 @@ export default function Projects() {
                                     height={400}
                                     width={700}
                                 />
-                                <p className={styles.caption}>
-                                    {project.alt}
-                                </p>
                             </div>
                         </SplideSlide>
                     ))}
-
                 </Splide>
             </div>
         </div>
