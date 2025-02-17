@@ -2,6 +2,7 @@
 @use "../../styles/measures.scss";
 
 .container {
+    min-height: 100vh;
     height: fit-content;
     padding-top: measures.$section-pt;
     display: flex;
