@@ -36,7 +36,7 @@ export default function Contact() {
                         Enviar
                     </Button>
                 </Form>
-                <div className={styles.contactDiv} data-aos="fade-up">
+                <div className={styles.contactDiv}>
                     <p className={styles.andOr}>E/OU</p>
                     <div className={styles.btnDiv}>
                         <Link
