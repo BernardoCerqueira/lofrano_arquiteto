@@ -4,11 +4,11 @@
 .container {
     min-height: 100vh;
     height: fit-content;
-    padding-bottom: 1rem;
+    padding-bottom: 3rem;
     padding-top: measures.$section-pt;
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 1rem;
 }
 
 .title {
