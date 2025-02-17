@@ -15,8 +15,8 @@ import Aos from "aos";
 export default function Home() {
   useEffect(() => {
     Aos.init({
-      duration: 2000,
-      once: false
+      duration: 1000,
+      once: true
     })
   }, [])
   

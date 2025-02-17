@@ -6,7 +6,7 @@ export default function ForArchitects() {
     return (
         <div className={styles.container}>
             <h2 className={styles.title}>Para Arquitetos</h2>
-            <div className={styles.contentDiv}>
+            <div className={styles.contentDiv} data-aos="fade-in">
                 <div className={styles.subtitle}>
                     <p>
                         Maquete 3D <span className={styles.bullet}>•</span> Plantas Baixas <span className={styles.bullet}>•

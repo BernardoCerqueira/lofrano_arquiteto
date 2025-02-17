@@ -8,7 +8,7 @@ export default function Contact() {
         <div className={styles.container}>
             <h2 className={styles.title}>Contatos</h2>
             <div className={styles.contentDiv}>
-                <Form action="" className={styles.form} id="budget">
+                <Form action="" className={styles.form} id="budget" data-aos="fade-right">
                     <legend className={styles.formTitle}>Orçamentos:</legend>
                     <div className={styles.inputDiv}>
                         <Input
@@ -38,7 +38,7 @@ export default function Contact() {
                 </Form>
                 <div className={styles.contactDiv}>
                     <p className={styles.andOr}>E/OU</p>
-                    <div className={styles.btnDiv}>
+                    <div className={styles.btnDiv} data-aos="fade-up">
                         <Link
                             href={"https://www.facebook.com/people/Lofrano-Arquitetura/61572186776421/?_rdr"}
                             target="_blank"

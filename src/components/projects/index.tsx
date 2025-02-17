@@ -6,8 +6,8 @@ import Image from "next/image";
 
 export default function Projects() {
     return (
-        <div className={styles.container} data-aos="zoom-in-down">
-            <h2 className={styles.title}>Projetos</h2>
+        <div className={styles.container}>
+            <h2 className={styles.title} data-aos="fade-up">Projetos</h2>
             <div className={styles.slideDiv}>
                 <Splide
                     options={{
