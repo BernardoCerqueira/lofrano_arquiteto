@@ -5,6 +5,8 @@ import About from "@/components/about";
 import Services from "@/components/services";
 import Consulting from "@/components/consulting";
 import Projects from "@/components/projects";
+import ForArchitects from "@/components/ForArchitects";
+import Contact from "@/components/contact";
 
 export default function Home() {
   return (
@@ -25,8 +27,12 @@ export default function Home() {
       <section id="projects">
         <Projects/>
       </section>
-      <section id="4architects"></section>
-      <section id="contact"></section>
+      <section id="4architects">
+        <ForArchitects/>
+      </section>
+      <section id="contact">
+        <Contact/>
+      </section>
     </div>
   );
 }
