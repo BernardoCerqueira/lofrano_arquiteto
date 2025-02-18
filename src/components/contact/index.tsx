@@ -3,9 +3,10 @@ import "jsuites/dist/jsuites.css"
 import styles from "./Contact.module.scss"
 import Link from "next/link"
 import { FaFacebookSquare, FaInstagram, FaWhatsapp } from "react-icons/fa"
-import { Button, Form, Input } from "reactstrap"
+import { Button, Form, Input, Spinner } from "reactstrap"
 import { FormEvent, useEffect, useRef, useState } from "react"
 import { CitiesArray } from "@/app/api/getCities/route"
+import ToastComponent from "./ToastComponent"
 
 export default function Contact() {
     const [name, setName] = useState("")
@@ -15,6 +16,9 @@ export default function Contact() {
     const [userMessage, setUserMessage] = useState("")
 
     const [toastMessage, setToastMessage] = useState("")
+    const [status, setStatus] = useState(true)
+    const [loading, setLoading] = useState(false)
+    const [showResponse, setShowResponse] = useState(false)
 
     const [cities, setCities] = useState<CitiesArray>([])
 
@@ -36,7 +40,7 @@ export default function Contact() {
 
         fetchCities()
     }, [])
-    
+
     const checkEmail = async (email: string) => {
         if (!email.match(/\./)) {
             setEmailCorrect(false)
@@ -46,7 +50,7 @@ export default function Contact() {
             return true
         }
     }
-    
+
     const checkPhone = async (phone: string) => {
         if (phone.length < 19) {
             setPhoneCorrect(false)
@@ -56,7 +60,7 @@ export default function Contact() {
             return true
         }
     }
-    
+
     const resetFields = () => {
         setName("")
         setPhone("")
@@ -67,17 +71,23 @@ export default function Contact() {
 
     const handleSubmit = async (ev: FormEvent) => {
         ev.preventDefault()
+        setLoading(true)
+        setShowResponse(true)
 
         const correctEmail = await checkEmail(email)
         const correctPhone = await checkPhone(phone)
 
         if (correctEmail === false) {
             setToastMessage(`O e-mail deve possuir um ponto (".").`)
+            setStatus(false)
+            setLoading(false)
             return
         }
 
         if (correctPhone === false) {
             setToastMessage("O número de telefone deve seguir a estrutura +55 (XX) XXXXX-XXXX.")
+            setStatus(false)
+            setLoading(false)
             return
         }
 
@@ -89,8 +99,14 @@ export default function Contact() {
 
         const data = await response.json()
         setToastMessage(data.message)
+        if(data.status === true){
+            setStatus(true)
+        }else{
+            setStatus(false)
+        }
 
         resetFields()
+        setLoading(false)
     }
 
     return (
@@ -170,6 +186,13 @@ export default function Contact() {
                         Enviar
                     </Button>
                 </Form>
+                {
+                    showResponse ?
+                        loading
+                            ? <Spinner className={styles.spinner} />
+                            : <ToastComponent message={toastMessage} status={status}/>
+                        : null
+                }
                 <div className={styles.contactDiv}>
                     <p className={styles.andOr}>E/OU</p>
                     <div className={styles.btnDiv}>
@@ -202,7 +225,6 @@ export default function Contact() {
                         </Link>
                     </div>
                 </div>
-                {toastMessage && <p>{toastMessage}</p>}
             </div>
         </div>
     )

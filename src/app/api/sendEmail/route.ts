@@ -18,13 +18,13 @@ export async function POST(req: NextRequest) {
             to: process.env.EMAIL_USER,
             replyTo: email,
             subject: 'Novo contato do site!',
-            text: `Nome: ${name}\nTelefone: ${phone}\nEmail: ${email}\nCidade: ${city}\n${userMessage && "Mensagem: " + userMessage}`,
+            text: `Nome: ${name}\nTelefone: ${phone}\nE-mail: ${email}\nCidade: ${city}\n${userMessage && "Mensagem: " + userMessage}`,
         })
 
         console.log('Email enviado:', info.response)
-        return NextResponse.json({ message: 'Email enviado com sucesso!' }, {status: 200})
+        return NextResponse.json({ message: 'E-mail enviado com sucesso!', status: true }, {status: 200})
     } catch (error) {
         console.error('Erro ao enviar email:', error)
-        return NextResponse.json({ message: 'Erro ao enviar email' }, {status: 500})
+        return NextResponse.json({ message: 'Erro ao enviar e-mail', status: true }, {status: 500})
     }
 }
