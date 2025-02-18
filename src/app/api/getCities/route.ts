@@ -41,7 +41,7 @@ export type CitiesArray = {
     }
 }[]
 
-export async function GET(req: NextRequest) {
+export async function GET() {
     const res = await fetch("https://servicodados.ibge.gov.br/api/v1/localidades/municipios")
     const cities: CitiesArray = await res.json()
     cities.sort((a, b) => a.nome.localeCompare(b.nome))
