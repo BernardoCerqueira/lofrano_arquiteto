@@ -1,10 +1,10 @@
+import "jsuites"
+import "jsuites/dist/jsuites.css"
 import styles from "./Contact.module.scss"
 import Link from "next/link"
 import { FaFacebookSquare, FaInstagram, FaWhatsapp } from "react-icons/fa"
 import { Button, Form, Input } from "reactstrap"
 import { FormEvent, useEffect, useRef, useState } from "react"
-import "jsuites"
-import "jsuites/dist/jsuites.css"
 import { CitiesArray } from "@/app/api/getCities/route"
 
 export default function Contact() {
@@ -12,11 +12,15 @@ export default function Contact() {
     const [phone, setPhone] = useState("")
     const [email, setEmail] = useState("")
     const [city, setCity] = useState("")
-    const [message, setMessage] = useState("")
+    const [userMessage, setUserMessage] = useState("")
+
+    const [toastMessage, setToastMessage] = useState("")
 
     const [cities, setCities] = useState<CitiesArray>([])
 
+    const [phoneCorrect, setPhoneCorrect] = useState(true)
     const [emailCorrect, setEmailCorrect] = useState(true)
+
     const emailInput = useRef<Input>(null)
 
     useEffect(() => {
@@ -32,27 +36,7 @@ export default function Contact() {
 
         fetchCities()
     }, [])
-
-    const handleSubmit = async (ev: FormEvent) => {
-        ev.preventDefault()
-
-        const correctEmail = await checkEmail(email)
-
-        if (correctEmail === false) {
-            setMessage(`O e-mail deve possuir um ponto (".").`)
-            return
-        }
-
-        const response = await fetch(`https://www.lofranoarquitetura.com.br/api/sendEmail`, {
-            method: "POST",
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name, phone, email, city })
-        })
-
-        const data = await response.json()
-        setMessage(data.message)
-    }
-
+    
     const checkEmail = async (email: string) => {
         if (!email.match(/\./)) {
             setEmailCorrect(false)
@@ -61,6 +45,52 @@ export default function Contact() {
             setEmailCorrect(true)
             return true
         }
+    }
+    
+    const checkPhone = async (phone: string) => {
+        if (phone.length < 19) {
+            setPhoneCorrect(false)
+            return false
+        } else {
+            setPhoneCorrect(true)
+            return true
+        }
+    }
+    
+    const resetFields = () => {
+        setName("")
+        setPhone("")
+        setEmail("")
+        setCity("")
+        setUserMessage("")
+    }
+
+    const handleSubmit = async (ev: FormEvent) => {
+        ev.preventDefault()
+
+        const correctEmail = await checkEmail(email)
+        const correctPhone = await checkPhone(phone)
+
+        if (correctEmail === false) {
+            setToastMessage(`O e-mail deve possuir um ponto (".").`)
+            return
+        }
+
+        if (correctPhone === false) {
+            setToastMessage("O número de telefone deve seguir a estrutura +55 (XX) XXXXX-XXXX.")
+            return
+        }
+
+        const response = await fetch(`/api/sendEmail`, { //mudar
+            method: "POST",
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, phone, email, city, userMessage })
+        })
+
+        const data = await response.json()
+        setToastMessage(data.message)
+
+        resetFields()
     }
 
     return (
@@ -78,7 +108,9 @@ export default function Contact() {
                     className={styles.form}
                     id="budget"
                 >
-                    <legend className={styles.formTitle}>Orçamentos:</legend>
+                    <legend className={styles.formTitle}>
+                        Orçamentos:
+                    </legend>
                     <div className={styles.inputDiv}>
                         <Input
                             type="text"
@@ -92,6 +124,10 @@ export default function Contact() {
                         <Input
                             type="tel"
                             className={styles.input}
+                            style={
+                                phoneCorrect ? { borderColor: '#545454' }
+                                    : { borderColor: 'red' }
+                            }
                             placeholder="Celular:"
                             value={phone}
                             onChange={(ev) => setPhone(ev.target.value)}
@@ -120,6 +156,14 @@ export default function Contact() {
                             value={city}
                             onChange={(ev) => setCity(ev.target.value)}
                             required
+                        />
+                        <Input
+                            type="textarea"
+                            maxLength={600}
+                            className={styles.textarea}
+                            placeholder="Olá! Gostaria de saber mais sobre..."
+                            value={userMessage}
+                            onChange={(ev) => setUserMessage(ev.target.value)}
                         />
                     </div>
                     <Button className={styles.formBtn} type="submit">
@@ -158,7 +202,7 @@ export default function Contact() {
                         </Link>
                     </div>
                 </div>
-                {message && <p>{message}</p>}
+                {toastMessage && <p>{toastMessage}</p>}
             </div>
         </div>
     )
