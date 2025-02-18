@@ -33,7 +33,6 @@ export default function Contact() {
         fetchCities()
     }, [])
 
-
     const handleSubmit = async (ev: FormEvent) => {
         ev.preventDefault()
 
@@ -44,7 +43,7 @@ export default function Contact() {
             return
         }
 
-        const response = await fetch("/api/sendEmail", {
+        const response = await fetch(`${process.env.URL}/api/sendEmail`, {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name, phone, email, city })
