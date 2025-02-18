@@ -43,7 +43,7 @@ export default function Contact() {
             return
         }
 
-        const response = await fetch(`${process.env.URL}/api/sendEmail`, {
+        const response = await fetch(`https://www.lofranoarquitetura.com.br/api/sendEmail`, {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name, phone, email, city })
