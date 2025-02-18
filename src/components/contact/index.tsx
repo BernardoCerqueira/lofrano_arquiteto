@@ -107,7 +107,7 @@ export default function Contact() {
 
             resetFields()
             setLoading(false)
-        } catch (error) {
+        } catch {
             setToastMessage("Erro ao enviar e-mail.")
             setStatus(false)
             setLoading(false)
