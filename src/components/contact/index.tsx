@@ -144,6 +144,7 @@ export default function Contact() {
                         />
                         <Input
                             type="tel"
+                            maxLength={19}
                             className={styles.input}
                             style={
                                 phoneCorrect ? { borderColor: '#545454' }
