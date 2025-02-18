@@ -91,22 +91,27 @@ export default function Contact() {
             return
         }
 
-        const response = await fetch(`/api/sendEmail`, { //mudar
-            method: "POST",
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name, phone, email, city, userMessage })
-        })
+        try {
+            const response = await fetch(`https://www.lofranoarquitetura.com.br/api/sendEmail`, {
+                method: "POST",
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, phone, email, city, userMessage })
+            })
+            const data = await response.json()
+            setToastMessage(data.message)
+            if (data.status === true) {
+                setStatus(true)
+            } else {
+                setStatus(false)
+            }
 
-        const data = await response.json()
-        setToastMessage(data.message)
-        if(data.status === true){
-            setStatus(true)
-        }else{
+            resetFields()
+            setLoading(false)
+        } catch (error) {
+            setToastMessage("Erro ao enviar e-mail.")
             setStatus(false)
+            setLoading(false)
         }
-
-        resetFields()
-        setLoading(false)
     }
 
     return (
@@ -190,7 +195,7 @@ export default function Contact() {
                     showResponse ?
                         loading
                             ? <Spinner className={styles.spinner} />
-                            : <ToastComponent message={toastMessage} status={status}/>
+                            : <ToastComponent message={toastMessage} status={status} />
                         : null
                 }
                 <div className={styles.contactDiv}>
