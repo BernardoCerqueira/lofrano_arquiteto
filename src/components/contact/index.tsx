@@ -1,32 +1,77 @@
-import { Button, Form, Input } from "reactstrap"
 import styles from "./Contact.module.scss"
 import Link from "next/link"
 import { FaFacebookSquare, FaInstagram, FaWhatsapp } from "react-icons/fa"
-import { FormEvent, useState } from "react"
+import { Button, Form, Input } from "reactstrap"
+import { FormEvent, useEffect, useRef, useState } from "react"
+import "jsuites"
+import "jsuites/dist/jsuites.css"
+import { CitiesArray } from "@/app/api/getCities/route"
 
 export default function Contact() {
-
     const [name, setName] = useState("")
     const [phone, setPhone] = useState("")
     const [email, setEmail] = useState("")
     const [city, setCity] = useState("")
     const [message, setMessage] = useState("")
 
+    const [cities, setCities] = useState<CitiesArray>([])
+
+    const [emailCorrect, setEmailCorrect] = useState(true)
+    const emailInput = useRef<Input>(null)
+
+    useEffect(() => {
+        const fetchCities = async () => {
+            try {
+                const res = await fetch("/api/getCities")
+                const data = await res.json()
+                setCities(data)
+            } catch (error) {
+                console.error("Erro ao buscar cidades:", error)
+            }
+        }
+
+        fetchCities()
+    }, [])
+
+
     const handleSubmit = async (ev: FormEvent) => {
         ev.preventDefault()
 
+        const correctEmail = await checkEmail(email)
+
+        if (correctEmail === false) {
+            setMessage(`O e-mail deve possuir um ponto (".").`)
+            return
+        }
+
         const response = await fetch("/api/sendEmail", {
             method: "POST",
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({name, phone, email, city})
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, phone, email, city })
         })
 
         const data = await response.json()
         setMessage(data.message)
     }
 
+    const checkEmail = async (email: string) => {
+        if (!email.match(/\./)) {
+            setEmailCorrect(false)
+            return false
+        } else {
+            setEmailCorrect(true)
+            return true
+        }
+    }
+
     return (
         <div className={styles.container}>
+            <datalist id="brazilianCities">
+                {cities.map(el => (
+                    <option value={el.nome} key={el.id}>{el.nome}</option>
+                ))}
+            </datalist>
+
             <h2 className={styles.title}>Contatos</h2>
             <div className={styles.contentDiv}>
                 <Form
@@ -38,6 +83,7 @@ export default function Contact() {
                     <div className={styles.inputDiv}>
                         <Input
                             type="text"
+                            maxLength={50}
                             className={styles.input}
                             placeholder="Nome:"
                             value={name}
@@ -51,9 +97,15 @@ export default function Contact() {
                             value={phone}
                             onChange={(ev) => setPhone(ev.target.value)}
                             required
+                            data-mask="[-]+55 (00) 00000-0000"
                         />
                         <Input
                             type="email"
+                            ref={emailInput}
+                            style={
+                                emailCorrect ? { borderColor: '#545454' }
+                                    : { borderColor: 'red' }
+                            }
                             className={styles.input}
                             placeholder="E-mail:"
                             value={email}
@@ -62,6 +114,7 @@ export default function Contact() {
                         />
                         <Input
                             type="text"
+                            list="brazilianCities"
                             className={styles.input}
                             placeholder="Cidade:"
                             value={city}

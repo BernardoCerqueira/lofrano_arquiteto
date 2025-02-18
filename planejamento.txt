@@ -33,3 +33,5 @@ Fazer responsividade para telas muito grandes
 Seta dos slides
 
 Lógica de email
+-Spinner de carregamento
+-Select de cidades
