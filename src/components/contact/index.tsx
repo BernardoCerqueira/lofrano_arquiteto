@@ -115,6 +115,7 @@ export default function Contact() {
                         <Input
                             type="text"
                             list="brazilianCities"
+                            maxLength={58}
                             className={styles.input}
                             placeholder="Cidade:"
                             value={city}
