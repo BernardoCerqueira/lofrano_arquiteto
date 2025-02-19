@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
+import Image from "next/image";
 
 export default function ImageGallery() {
     const [images, setImages] = useState<
@@ -46,7 +47,7 @@ export default function ImageGallery() {
             <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
                 {images.map((image) => (
                     <div key={image.name}> {/* Use o nome do arquivo como chave */}
-                        <img src={image.url} alt={`Imagem ${image.name}`} width={150} />
+                        <Image src={image.url} alt={`Imagem ${image.name}`} width={150} />
                         <button onClick={() => handleDelete(image.name)}>
                             Deletar
                         </button>

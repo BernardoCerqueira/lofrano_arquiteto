@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { supabase } from "@/lib/supabase";
+import Image from "next/image";
 
 export default function FileUpload() {
     const [file, setFile] = useState<File | null>(null);
@@ -65,7 +66,7 @@ export default function FileUpload() {
             {url && (
                 <div>
                     <p>Arquivo enviado:</p>
-                    <img src={url} alt="Imagem enviada" width={200} />
+                    <Image src={url} alt="Imagem enviada" width={200} />
                     <button onClick={handleDelete}>Deletar Arquivo</button> {/* Botão de deletar */}
                 </div>
             )}
