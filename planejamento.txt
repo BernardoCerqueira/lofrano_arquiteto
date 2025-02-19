@@ -24,10 +24,9 @@ TELAS:
 5. Projects [OK]
 6. 4Architects [OK]
 7. Contact [OK]
-8. Footer
+8. Footer [OK]
 
 ---------------
 
-Fazer responsividade para telas muito grandes
-
 Seta dos slides
+Admin
