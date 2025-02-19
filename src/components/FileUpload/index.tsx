@@ -19,7 +19,7 @@ export default function FileUpload() {
         const newFileName = `${Date.now()}-${file.name}`; // Nome do arquivo gerado
         setFileName(newFileName); // Define o nome do arquivo
 
-        const { data, error } = await supabase.storage
+        const { error } = await supabase.storage
             .from("uploads")
             .upload(`images/${newFileName}`, file);
 
