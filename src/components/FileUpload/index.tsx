@@ -78,7 +78,7 @@ export default function FileUpload() {
             {imageUrl && (
                 <div>
                     <p>Imagem enviada:</p>
-                    <Image src={imageUrl} alt="Imagem enviada" width={1400} height={800} />
+                    <Image src={imageUrl} alt="Imagem enviada" width={200} height={100} />
                     <button onClick={() => handleDelete("images")}>Deletar Imagem</button>
                 </div>
             )}
@@ -90,7 +90,7 @@ export default function FileUpload() {
             {profilePicUrl && (
                 <div>
                     <p>Foto de perfil enviada:</p>
-                    <Image src={profilePicUrl} alt="Foto de perfil enviada" width={200} height={200} />
+                    <Image src={profilePicUrl} alt="Foto de perfil enviada" width={200} height={300} />
                     <button onClick={() => handleDelete("profilePic")}>Deletar Foto de Perfil</button>
                 </div>
             )}
