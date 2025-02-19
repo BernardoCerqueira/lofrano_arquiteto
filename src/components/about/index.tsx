@@ -20,7 +20,6 @@ export default function About() {
             )
 
             setImages(urls)
-            console.log(images)
         }
 
         fetchImages()
