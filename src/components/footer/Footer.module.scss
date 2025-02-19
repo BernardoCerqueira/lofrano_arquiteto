@@ -1,0 +1,9 @@
+@use "../../styles/colors.scss";
+
+.container{
+    background-color: colors.$gray;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    padding: .6rem;
+}

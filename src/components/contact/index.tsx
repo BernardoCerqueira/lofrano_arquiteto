@@ -115,7 +115,7 @@ export default function Contact() {
     }
 
     return (
-        <div className={styles.container}>
+        <div className={styles.container} id="budget">
             <datalist id="brazilianCities">
                 {cities.map(el => (
                     <option value={el.nome} key={el.id}>{el.nome}</option>
@@ -126,8 +126,7 @@ export default function Contact() {
             <div className={styles.contentDiv}>
                 <Form
                     onSubmit={handleSubmit}
-                    className={styles.form}
-                    id="budget"
+                    className={styles.form} 
                 >
                     <legend className={styles.formTitle}>
                         Orçamentos:
