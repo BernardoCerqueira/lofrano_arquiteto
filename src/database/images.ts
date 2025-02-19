@@ -61,5 +61,3 @@ const database: Database = [
         alt: "Projeto de Sala Moderna"
     },
 ]
-
-export default database

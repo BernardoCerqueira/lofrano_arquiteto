@@ -1,10 +1,33 @@
-import images from "@/database/images";
+//import images from "@/database/images";
+import { supabase } from "@/lib/supabase";
 import styles from "./Projects.module.scss";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import Image from "next/image";
 import "@splidejs/splide/css";
+import { useEffect, useState } from "react";
 
 export default function Projects() {
+    const [images, setImages] = useState<string[]>([]);
+
+    useEffect(() => {
+        const fetchImages = async () => {
+            const { data, error } = await supabase.storage.from("uploads").list("images");
+
+            if (error) {
+                console.error("Erro ao buscar imagens:", error);
+                return;
+            }
+
+            const urls = data.map((file) =>
+                `https://gqopcittpbraiiqkufww.supabase.co/storage/v1/object/public/uploads/images/${file.name}`
+            );
+
+            setImages(urls);
+        };
+
+        fetchImages();
+    }, []);
+
     return (
         <div className={styles.container}>
             <h2 className={styles.title}>Projetos</h2>
@@ -30,11 +53,11 @@ export default function Projects() {
                     className={styles.splide}
                 >
                     {images.map(project => (
-                        <SplideSlide className={styles.slide} key={project.id}>
+                        <SplideSlide className={styles.slide} key={project}>
                             <div>
                                 <Image
-                                    src={project.imgPath}
-                                    alt={project.alt}
+                                    src={project}
+                                    alt={"Projeto"}
                                     height={800}
                                     width={1400}
                                 />
