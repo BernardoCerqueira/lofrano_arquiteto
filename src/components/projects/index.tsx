@@ -1,8 +1,8 @@
 import images from "@/database/images";
-import styles from "./Projects.module.scss"
+import styles from "./Projects.module.scss";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
-import "@splidejs/splide/css";
 import Image from "next/image";
+import "@splidejs/splide/css";
 
 export default function Projects() {
     return (

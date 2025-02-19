@@ -15,7 +15,7 @@
     color: colors.$gray;
     text-align: center;
     font-size: measures.$title;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 .slideDiv {
@@ -67,6 +67,9 @@
 }
 
 @media screen and (max-width: 580px) {
+    .container{
+        min-height: 75vh;
+    }
     .slideDiv {
         width: 100%;
     }

@@ -28,5 +28,4 @@ TELAS:
 
 ---------------
 
-Seta dos slides
 Admin
