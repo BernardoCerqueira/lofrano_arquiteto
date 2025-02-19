@@ -1,3 +1,6 @@
+"use client"
+
+import { FormEvent, useState } from "react"
 import styles from "./Login.module.scss"
 
 export default function Login() {
@@ -6,7 +9,7 @@ export default function Login() {
             <h1 className={styles.title}>
                 Login de Administrador
             </h1>
-            <form action="/api/admin" className={styles.form}>
+            <form action={"/api/admin/dashboard"} className={styles.form}>
                 <div>
                     <label
                         htmlFor="email"
@@ -19,7 +22,7 @@ export default function Login() {
                         placeholder="Digite seu email..."
                         name="email"
                         id="email"
-                        className={styles.input} 
+                        className={styles.input}
                     />
                 </div>
                 <div>

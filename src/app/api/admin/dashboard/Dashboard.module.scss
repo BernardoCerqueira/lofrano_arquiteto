@@ -1,0 +1,41 @@
+@use "../../../../styles/colors.scss";
+
+.container {
+    background-color: colors.$lightGray;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 3rem;
+    place-content: center;
+    place-items: center;
+}
+
+.title {
+    text-align: center;
+}
+
+.upload {}
+
+.gallery {}
+
+.profilePic {}
+
+.result {
+    .link {
+        text-decoration: none;
+        font-size: 28px;
+
+        .btn {
+            padding: .5rem 1rem;
+            border: 1px solid black;
+            background-color: colors.$lightGray;
+            transition: all .3s ease;
+
+            &:hover {
+                background-color: colors.$gray;
+                color: white;
+            }
+        }
+    }
+}
