@@ -1,4 +1,3 @@
-//import images from "@/database/images";
 import { supabase } from "@/lib/supabaseClient";
 import styles from "./Projects.module.scss";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
@@ -11,22 +10,22 @@ export default function Projects() {
 
     useEffect(() => {
         const fetchImages = async () => {
-            const { data, error } = await supabase.storage.from("uploads").list("images");
+            const { data, error } = await supabase.storage.from("uploads").list("images")
 
             if (error) {
-                console.error("Erro ao buscar imagens:", error);
-                return;
+                console.error("Erro ao buscar imagens:", error)
+                return
             }
 
             const urls = data.map((file) =>
                 `https://gqopcittpbraiiqkufww.supabase.co/storage/v1/object/public/uploads/images/${file.name}`
-            );
+            )
 
-            setImages(urls);
-        };
+            setImages(urls)
+        }
 
-        fetchImages();
-    }, []);
+        fetchImages()
+    }, [])
 
     return (
         <div className={styles.container}>
@@ -39,7 +38,7 @@ export default function Projects() {
                         perMove: 1,
                         gap: "2vw",
                         autoplay: true,
-                        interval: 6500,
+                        interval: 6000,
                         arrows: true,
                         pagination: true,
 

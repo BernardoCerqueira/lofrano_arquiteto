@@ -1,73 +1,97 @@
-import { useState } from "react";
-import { supabase } from "@/lib/supabaseClient";
-import Image from "next/image";
+import { useState } from "react"
+import { supabase } from "@/lib/supabaseClient"
+import Image from "next/image"
 
 export default function FileUpload() {
-    const [file, setFile] = useState<File | null>(null);
-    const [uploading, setUploading] = useState(false);
-    const [url, setUrl] = useState<string | null>(null);
-    const [fileName, setFileName] = useState<string | null>(null); // Guarda o nome do arquivo
+    const [file, setFile] = useState<File | null>(null)
+    const [uploading, setUploading] = useState(false)
+    const [imageUrl, setImageUrl] = useState<string | null>(null)
+    const [profilePicUrl, setProfilePicUrl] = useState<string | null>(null)
+    const [fileName, setFileName] = useState<string | null>(null)
 
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        if (event.target.files) setFile(event.target.files[0]);
-    };
+        if (event.target.files) setFile(event.target.files[0])
+    }
 
-    const handleUpload = async () => {
-        if (!file) return alert("Selecione um arquivo!");
+    const handleUpload = async (path: string) => { 
+        if (!file) return alert("Selecione um arquivo!")
 
-        setUploading(true);
-        const newFileName = `${Date.now()}-${file.name}`; // Nome do arquivo gerado
-        setFileName(newFileName); // Define o nome do arquivo
+        setUploading(true)
+        const newFileName = `${Date.now()}-${file.name}`
+        setFileName(newFileName)
 
         const { error } = await supabase.storage
             .from("uploads")
-            .upload(`images/${newFileName}`, file);
+            .upload(`${path}/${newFileName}`, file)
 
-        setUploading(false);
+        setUploading(false)
 
         if (error) {
-            alert("Erro ao enviar arquivo!");
-            return;
+            alert("Erro ao enviar arquivo!")
+            console.error(error)
+            return
         }
 
         const { data: publicUrlData } = supabase.storage
             .from("uploads")
-            .getPublicUrl(`images/${newFileName}`);
+            .getPublicUrl(`${path}/${newFileName}`)
 
-        const publicUrl = publicUrlData.publicUrl;
-        setUrl(publicUrl);
-        alert("Upload feito com sucesso!");
+        const publicUrl = publicUrlData.publicUrl
+
+        if (path === "images") {
+            setImageUrl(publicUrl)
+        } else if (path === "profilePic") {
+            setProfilePicUrl(publicUrl)
+        }
+
+        alert("Upload feito com sucesso!")
     };
 
-    const handleDelete = async () => {
-        if (!fileName) return; // Nada para deletar se o nome do arquivo não estiver definido
+    const handleDelete = async (path: string) => {
+        if (!fileName) return
 
         const { error } = await supabase.storage
             .from("uploads")
-            .remove([`images/${fileName}`]);
+            .remove([`${path}/${fileName}`])
 
         if (error) {
-            alert("Erro ao deletar arquivo!");
-            return;
+            alert("Erro ao deletar arquivo!")
+            return
         }
 
-        setUrl(null); // Limpa a URL da imagem
-        setFileName(null); // Limpa o nome do arquivo
-        alert("Arquivo deletado com sucesso!");
+        if (path === "images") {
+            setImageUrl(null)
+        } else if (path === "profilePic") {
+            setProfilePicUrl(null)
+        }
+
+        setFileName(null)
+        alert("Arquivo deletado com sucesso!")
     };
 
     return (
         <div>
             <input type="file" onChange={handleFileChange} />
-            <button onClick={handleUpload} disabled={uploading}>
-                {uploading ? "Enviando..." : "Enviar"}
+            <button onClick={() => handleUpload("images")} disabled={uploading}>
+                {uploading ? "Enviando..." : "Enviar para imagens"}
             </button>
-
-            {url && (
+            {imageUrl && (
                 <div>
-                    <p>Arquivo enviado:</p>
-                    <Image src={url} alt="Imagem enviada" width={200} />
-                    <button onClick={handleDelete}>Deletar Arquivo</button> {/* Botão de deletar */}
+                    <p>Imagem enviada:</p>
+                    <Image src={imageUrl} alt="Imagem enviada" width={1400} height={800} />
+                    <button onClick={() => handleDelete("images")}>Deletar Imagem</button>
+                </div>
+            )}
+
+            <input type="file" onChange={handleFileChange} />
+            <button onClick={() => handleUpload("profilePic")} disabled={uploading}>
+                {uploading ? "Enviando..." : "Enviar para foto de perfil"}
+            </button>
+            {profilePicUrl && (
+                <div>
+                    <p>Foto de perfil enviada:</p>
+                    <Image src={profilePicUrl} alt="Foto de perfil enviada" width={200} height={200} />
+                    <button onClick={() => handleDelete("profilePic")}>Deletar Foto de Perfil</button>
                 </div>
             )}
         </div>
