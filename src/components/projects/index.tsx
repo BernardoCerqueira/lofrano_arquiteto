@@ -2,8 +2,8 @@ import { supabase } from "@/lib/supabaseClient";
 import styles from "./Projects.module.scss";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import Image from "next/image";
-import "@splidejs/splide/css";
 import { useEffect, useState } from "react";
+import "@splidejs/splide/css";
 
 export default function Projects() {
     const [images, setImages] = useState<string[]>([]);
