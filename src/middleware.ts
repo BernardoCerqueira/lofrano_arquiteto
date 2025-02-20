@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from "next/server"
 import jwt from "jsonwebtoken"
 
+export const config = {
+    runtime: "nodejs"
+}
+
 const JWT_SECRET = process.env.JWT_SECRET!
 
 export default async function middleware(req: NextRequest) {
@@ -16,6 +20,7 @@ export default async function middleware(req: NextRequest) {
             return NextResponse.next()
         } catch (error) {
             setTimeout(() => {
+                console.log(error)
                 return NextResponse.redirect(new URL("/api/admin/login", req.url))
             }, 1000)
         }
