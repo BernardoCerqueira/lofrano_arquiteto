@@ -5,7 +5,7 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    padding: 2rem;
     gap: 3rem;
     place-content: center;
     place-items: center;
@@ -13,6 +13,7 @@
 
 .title {
     text-align: center;
+    font-size: 40px;
 }
 
 .upload {}
@@ -37,5 +38,14 @@
                 color: white;
             }
         }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .title{
+        font-size: 30px;
+    }
+    .container{
+        gap: 2rem;
     }
 }

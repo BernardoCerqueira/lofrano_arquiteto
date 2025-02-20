@@ -1,19 +1,28 @@
 import { useState } from "react"
 import { supabase } from "@/lib/supabaseClient"
 import Image from "next/image"
+import styles from "./FileUpload.module.scss"
+import { Input } from "reactstrap"
 
 export default function FileUpload() {
     const [file, setFile] = useState<File | null>(null)
+    const [filePP, setFilePP] = useState<File | null>(null)
     const [uploading, setUploading] = useState(false)
+    const [uploadingPP, setUploadingPP] = useState(false)
     const [imageUrl, setImageUrl] = useState<string | null>(null)
     const [profilePicUrl, setProfilePicUrl] = useState<string | null>(null)
     const [fileName, setFileName] = useState<string | null>(null)
+    const [fileNamePP, setFileNamePP] = useState<string | null>(null)
 
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         if (event.target.files) setFile(event.target.files[0])
     }
 
-    const handleUpload = async (path: string) => { 
+    const handleFileChangePP = (event: React.ChangeEvent<HTMLInputElement>) => {
+        if (event.target.files) setFilePP(event.target.files[0])
+    }
+
+    const handleUploadProject = async (path: string) => {
         if (!file) return alert("Selecione um arquivo!")
 
         setUploading(true)
@@ -38,14 +47,40 @@ export default function FileUpload() {
 
         const publicUrl = publicUrlData.publicUrl
 
-        if (path === "images") {
-            setImageUrl(publicUrl)
-        } else if (path === "profilePic") {
-            setProfilePicUrl(publicUrl)
-        }
+        setImageUrl(publicUrl)
 
         alert("Upload feito com sucesso!")
-    };
+    }
+
+    const handleUploadProfilePic = async (path: string) => {
+        if (!filePP) return alert("Selecione um arquivo!")
+
+        setUploadingPP(true)
+        const newFileName = `${Date.now()}-${filePP.name}`
+        setFileNamePP(newFileName)
+
+        const { error } = await supabase.storage
+            .from("uploads")
+            .upload(`${path}/${newFileName}`, filePP)
+
+        setUploadingPP(false)
+
+        if (error) {
+            alert("Erro ao enviar arquivo!")
+            console.error(error)
+            return
+        }
+
+        const { data: publicUrlData } = supabase.storage
+            .from("uploads")
+            .getPublicUrl(`${path}/${newFileName}`)
+
+        const publicUrl = publicUrlData.publicUrl
+
+        setProfilePicUrl(publicUrl)
+
+        alert("Upload feito com sucesso!")
+    }
 
     const handleDelete = async (path: string) => {
         if (!fileName) return
@@ -59,41 +94,102 @@ export default function FileUpload() {
             return
         }
 
-        if (path === "images") {
-            setImageUrl(null)
-        } else if (path === "profilePic") {
-            setProfilePicUrl(null)
-        }
+        setImageUrl(null)
 
         setFileName(null)
         alert("Arquivo deletado com sucesso!")
-    };
+    }
+
+    const handleDeletePP = async (path: string) => {
+        if (!fileNamePP) return
+
+        const { error } = await supabase.storage
+            .from("uploads")
+            .remove([`${path}/${fileNamePP}`])
+
+        if (error) {
+            alert("Erro ao deletar arquivo!")
+            return
+        }
+
+        setProfilePicUrl(null)
+
+        setFileNamePP(null)
+        alert("Arquivo deletado com sucesso!")
+    }
 
     return (
-        <div>
-            <input type="file" onChange={handleFileChange} />
-            <button onClick={() => handleUpload("images")} disabled={uploading}>
-                {uploading ? "Enviando..." : "Enviar para imagens"}
-            </button>
-            {imageUrl && (
-                <div>
-                    <p>Imagem enviada:</p>
-                    <Image src={imageUrl} alt="Imagem enviada" width={200} height={100} />
-                    <button onClick={() => handleDelete("images")}>Deletar Imagem</button>
-                </div>
-            )}
+        <div className={styles.container}>
+            <div className={styles.projectsSection}>
+                <h2 className={styles.sectionTitle}>Projetos</h2>
+                <Input
+                    type="file"
+                    onChange={handleFileChange}
+                    className={styles.input}
+                />
+                <button
+                    onClick={() => handleUploadProject("images")} disabled={uploading}
+                    className={styles.btn}
+                >
+                    {uploading ? "Enviando..." : "Enviar projeto"}
+                </button>
 
-            <input type="file" onChange={handleFileChange} />
-            <button onClick={() => handleUpload("profilePic")} disabled={uploading}>
-                {uploading ? "Enviando..." : "Enviar para foto de perfil"}
-            </button>
-            {profilePicUrl && (
-                <div>
-                    <p>Foto de perfil enviada:</p>
-                    <Image src={profilePicUrl} alt="Foto de perfil enviada" width={200} height={300} />
-                    <button onClick={() => handleDelete("profilePic")}>Deletar Foto de Perfil</button>
-                </div>
-            )}
+                {imageUrl && (
+                    <div className={styles.imageSentDiv}>
+                        <p className={styles.imageSentText}>Projeto enviado:</p>
+                        <Image
+                            src={imageUrl}
+                            alt="Imagem enviada"
+                            width={250}
+                            height={150}
+                            className={styles.imageSent}
+                        />
+                        <button
+                            onClick={() => handleDelete("images")}
+                            className={styles.deleteBtn}
+                        >
+                            Deletar Projeto
+                        </button>
+                    </div>
+                )}
+            </div>
+
+            <div className={styles.profilePicSection}>
+                <h2 className={styles.sectionTitle}>Foto de Perfil</h2>
+                <Input
+                    type="file"
+                    onChange={handleFileChangePP}
+                    className={styles.input}
+                />
+                <button
+                    onClick={() => handleUploadProfilePic("profilePic")}
+                    disabled={uploadingPP}
+                    className={styles.btn}
+                >
+                    {uploadingPP ? "Enviando..." : "Enviar foto de perfil"}
+                </button>
+
+                {profilePicUrl && (
+                    <div className={styles.imageSentDiv}>
+                        <p className={styles.imageSentDiv}>
+                            Foto de perfil enviada:
+                        </p>
+                        <Image
+                            src={profilePicUrl}
+                            alt="Foto de perfil enviada"
+                            width={250}
+                            height={300}
+                            className={styles.imageSent}
+                        />
+                        <button
+                            onClick={() => handleDeletePP("profilePic")}
+                            className={styles.deleteBtn}
+                        >
+                            Deletar Foto de Perfil
+                        </button>
+                    </div>
+                )}
+            </div>
         </div>
-    );
+    )
 }
