@@ -6,7 +6,8 @@ import { useEffect, useState } from "react";
 import "@splidejs/splide/css";
 
 export default function Projects() {
-    const [images, setImages] = useState<string[]>([]);
+    const [images, setImages] = useState<string[]>([])
+    const [timePassed, setTimePassed] = useState(false)
 
     useEffect(() => {
         const fetchImages = async () => {
@@ -26,6 +27,10 @@ export default function Projects() {
 
         fetchImages()
     }, [])
+
+    setTimeout(() => {
+        setTimePassed(true)
+    }, 1000)
 
     return (
         <div className={styles.container}>
@@ -52,7 +57,7 @@ export default function Projects() {
                     className={styles.splide}
                 >
                     {images.map(project => (
-                        <SplideSlide className={styles.slide} key={project}>
+                        <SplideSlide className={styles.slide} key={project} styles={timePassed ? {"height": "fit-content"} : {"height": "100px"}}>
                             <div>
                                 <Image
                                     src={project}
