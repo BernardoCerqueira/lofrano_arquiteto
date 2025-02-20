@@ -27,5 +27,3 @@ TELAS:
 8. Footer [OK]
 
 ---------------
-
--SPINNER ENQUANTO CARREGA AS IMAGENS
