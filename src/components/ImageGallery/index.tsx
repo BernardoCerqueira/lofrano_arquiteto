@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { supabase } from "@/lib/supabaseClient"
 import Image from "next/image"
+import styles from "./ImageGallery.module.scss"
 
 export default function ImageGallery() {
     const [images, setImages] = useState<
@@ -36,24 +37,32 @@ export default function ImageGallery() {
             return
         }
 
-        // Atualiza a galeria após deletar
         setImages((prevImages) => prevImages.filter((image) => image.name !== fileName))
         alert("Imagem deletada com sucesso!")
-    };
+    }
 
     return (
-        <div>
-            <h2>Galeria de Imagens</h2>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+        <div className={styles.container}>
+            <h2 className={styles.galleryTitle}>Galeria de Projetos</h2>
+            <div className={styles.gallery}>
                 {images.map((image) => (
-                    <div key={image.name}>
-                        <Image src={image.url} alt={`Imagem ${image.name}`} width={310} height={200} />
-                        <button onClick={() => handleDelete(image.name)}>
+                    <div key={image.name} className={styles.imageDiv}>
+                        <Image
+                            src={image.url}
+                            alt={`Imagem ${image.name}`}
+                            width={280}
+                            height={180}
+                            className={styles.img}
+                        />
+                        <button
+                            onClick={() => handleDelete(image.name)}
+                            className={styles.btn}
+                        >
                             Deletar
                         </button>
                     </div>
                 ))}
             </div>
         </div>
-    );
+    )
 }

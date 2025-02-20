@@ -1,0 +1,75 @@
+@use "../../styles/colors.scss";
+
+.container {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    place-items: center;
+    place-content: center;
+}
+
+.galleryTitle {
+    text-align: center;
+    color: colors.$darkGray;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.imageDiv {
+    display: flex;
+    flex-direction: column;
+}
+
+.img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: 1px solid black;
+}
+
+.btn {
+    padding: .5rem;
+    background-color: rgba(143, 0, 0, 0.973);
+    color: white;
+    transition: all .3s ease;
+    border: 1px solid black;
+    border-top: none;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+    &:hover {
+        background-color: red;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .gallery {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .galleryTitle{
+        font-size: 26px;
+    }
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
