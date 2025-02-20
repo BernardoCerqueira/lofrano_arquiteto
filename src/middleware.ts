@@ -1,15 +1,23 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server"
+import jwt from "jsonwebtoken"
+
+const JWT_SECRET = process.env.JWT_SECRET!
 
 export default async function middleware(req: NextRequest) {
     if (req.nextUrl.pathname.endsWith("/admin/dashboard")) {
-        const queryParams = req.nextUrl.searchParams
-        const email = queryParams.get("email")
-        const password = queryParams.get("password")
+        const token = req.cookies.get("session_token")?.value
 
-        if (email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD) {
+        if (!token) {
+            return NextResponse.redirect(new URL("/api/admin/login", req.url))
+        }
+
+        try {
+            jwt.verify(token, JWT_SECRET)
             return NextResponse.next()
-        } else {
-            return NextResponse.redirect(new URL('/api/admin/login', req.url))
+        } catch (error) {
+            setTimeout(() => {
+                return NextResponse.redirect(new URL("/api/admin/login", req.url))
+            }, 1000)
         }
     }
 
