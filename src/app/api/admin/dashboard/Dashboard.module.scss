@@ -5,7 +5,7 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding: 2rem;
+    padding: 3rem;
     gap: 3rem;
     place-content: center;
     place-items: center;
@@ -16,13 +16,13 @@
     font-size: 40px;
 }
 
-.upload {}
-
-.gallery {}
-
-.profilePic {}
-
 .result {
+    border-top: 1px solid black;
+    padding-top: 3rem;
+    width: 100%;
+    display: flex;
+    place-content: center;
+
     .link {
         text-decoration: none;
         font-size: 28px;
@@ -30,8 +30,10 @@
         .btn {
             padding: .5rem 1rem;
             border: 1px solid black;
+            border-radius: 10px;
             background-color: colors.$lightGray;
             transition: all .3s ease;
+            font-size: 24px;
 
             &:hover {
                 background-color: colors.$gray;

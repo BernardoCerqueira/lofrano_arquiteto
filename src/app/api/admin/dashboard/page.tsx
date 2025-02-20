@@ -10,18 +10,18 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Upload de Arquivos</h1>
-      <div className={styles.upload}>
+      <div>
         <FileUpload />
       </div>
-      <div className={styles.gallery}>
+      <div>
         <ImageGallery />
       </div>
-      <div className={styles.profilePic}>
+      <div>
         <ProfilePicGallery />
       </div>
       <div className={styles.result}>
         <Link href={"/"} className={styles.link}>
-          <button className={styles.btn}>Conferir resultados</button>
+          <button className={styles.btn}>Ir à página principal</button>
         </Link>
       </div>
     </div>
