@@ -1,6 +1,6 @@
 # Lofrano Arquitetura
 
-Lofrano Arquitetura é um projeto de website desenvolvido com Next.js/React, oferecendo uma experiência elegante e funcional para apresentação de serviços de arquitetura. O site possui uma página principal com diversas seções e uma área administrativa para gestão de conteúdo.
+Lofrano Arquitetura é um website desenvolvido com Next.js/React, oferecendo uma experiência elegante e funcional para apresentação de serviços de arquitetura. O site possui uma página principal com diversas seções e uma área administrativa para gestão de conteúdo.
 Desenvolvi esse site para o arquiteto [João Pedro Lofrano](https://www.lofranoarquitetura.com.br).
 
 ## 🌍 Funcionalidades
