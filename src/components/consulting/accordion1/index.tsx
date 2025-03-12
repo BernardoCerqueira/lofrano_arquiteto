@@ -72,7 +72,7 @@ function Accordion1() {
                         </p>
                     </AccordionHeader>
                     <AccordionBody accordionId="5" className={styles.body}>
-                        <p>Com o material que você receberá, saberá exatamanete quais itens adquirir.</p>
+                        <p>Com o material que você receberá, saberá exatamente quais itens adquirir.</p>
                         <p>E, caso surja qualquer dúvida durante a <strong>execução</strong>, estaremos sempre dispostos a lhe auxiliar.</p>
                     </AccordionBody>
                 </AccordionItem>
