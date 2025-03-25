@@ -13,7 +13,6 @@ export default function FileUpload() {
     const [profilePicUrl, setProfilePicUrl] = useState<string | null>(null)
     const [fileName, setFileName] = useState<string | null>(null)
     const [fileNamePP, setFileNamePP] = useState<string | null>(null)
-    const [files, setFiles] = useState<{ name: string; url: string }[]>([]);
 
 
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -50,8 +49,6 @@ export default function FileUpload() {
         const publicUrl = publicUrlData.publicUrl
 
         setImageUrl(publicUrl)
-
-        setFiles((prevFiles) => [{ name: newFileName, url: publicUrl }, ...prevFiles]);
 
         alert("Upload feito com sucesso!")
     }

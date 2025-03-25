@@ -22,6 +22,8 @@ export default function Projects() {
                 `https://gqopcittpbraiiqkufww.supabase.co/storage/v1/object/public/uploads/images/${file.name}`
             )
 
+            urls.reverse()
+
             setImages(urls)
         }
 
